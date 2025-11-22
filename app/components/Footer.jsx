@@ -1,6 +1,16 @@
 export default function Footer() {
   return (
     <footer className="relative w-full h-screen bg-black overflow-hidden flex flex-col">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 grayscale"
+      >
+        <source src="/smoke.mp4" type="video/mp4" />
+      </video>
       {/* Horizontal Smoke Waves Background */}
       <div className="absolute inset-0 overflow-hidden">
         <svg className="absolute w-full h-full" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">

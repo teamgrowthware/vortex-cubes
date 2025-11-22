@@ -50,7 +50,7 @@ export default function Home() {
         preload="auto"
         className="absolute top-0 left-0 w-full h-full object-cover z-0 grayscale"
       >
-        <source src="/video.mp4" type="video/mp4" />
+        <source src="/smoke.mp4" type="video/mp4" />
       </video>
 
       {/* Background Blurs */}
@@ -60,7 +60,7 @@ export default function Home() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-20 max-w-5xl mx-auto px-6 text-center mt-40">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-black/10 backdrop-blur-md rounded-full border border-white/20">
           <span className="w-2 h-2 bg-white rounded-full"></span>
