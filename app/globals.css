@@ -3,81 +3,50 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Define the font variable for easy access */
+  --font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  /* 1. Set Plus Jakarta Sans as the default Tailwind font-sans */
+  --font-sans: var(--font-plus-jakarta-sans); 
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ... (existing dark mode styles) ... */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* 2. Apply the Plus Jakarta Sans font to the body */
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
 }
 
-@keyframes scrollSlow {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Add this custom class to your globals.css */
+.glow-button {
+    position: relative;
+    /* Ensure content is above the glow */
+    z-index: 10; 
+    overflow: hidden;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(2rem, -50%) translateY(0px);
-  }
-  50% {
-    transform: translate(2rem, -50%) translateY(-20px);
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.8s ease-out both;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes scrollTags {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.tag-scroll {
-  animation: scrollTags 30s linear infinite;
-}
-
-.tag-scroll:hover {
-  animation-play-state: paused;
+.glow-button::after {
+    content: '';
+    position: absolute;
+    /* Position the glow around the button */
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    /* Use a box-shadow with a large blur to create the glow */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    /* Match the button's border radius */
+    border-radius: 18px; 
+    /* The glow should be below the button and its border */
+    z-index: -1; 
 }

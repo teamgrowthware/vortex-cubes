@@ -35,15 +35,9 @@ const AlllProjects = () => {
                                 src={item.img}
                                 width={400}
                                 height={600}
-                                className={`w-full rounded-xl object-cover ${item.height} transition-all duration-700 ${hovered === index ? "scale-110" : "scale-100"
+                                className={`w-full rounded-xl object-cover ${item.height} grayscale hover:grayscale-0 transition-all duration-700 ${hovered === index ? "scale-110" : "scale-100"
                                     }`}
                                 alt="Project"
-                            />
-
-                            {/* Overlay */}
-                            <div
-                                className={`absolute inset-0 bg-[#e2e2e2]/50 transition-opacity duration-500 ${hovered === index ? "opacity-0" : "opacity-100"
-                                    }`}
                             />
 
                             <button
@@ -58,10 +52,22 @@ const AlllProjects = () => {
                         </div>
                     ))}
                 </div>
+
+              
+                <div className="flex justify-center gap-6 mt-12 flex-wrap">
+  {/* All Projects - Underlined text style */}
+  <button className="px-6 py-3 text-white font-semibold text-lg border-b-2 border-white/70 hover:border-white/100 transition-all duration-300">
+    All Projects
+  </button>
+
+  {/* View All Projects - Glowing frosted glass button */}
+  <button className="px-8 py-3 text-white text-lg font-semibold rounded-xl border border-white/50 bg-black/20 backdrop-blur-md shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all duration-300">
+    View All Projects
+  </button>
+</div>
             </div>
         </div>
     );
 };
 
 export default AlllProjects;
-

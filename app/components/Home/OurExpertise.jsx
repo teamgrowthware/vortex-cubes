@@ -19,11 +19,12 @@ const ExpertiseSection = () => {
     ];
 
     return (
+        
         <div className=" text-white flex items-center justify-center">
             <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
                 {/* Left Content */}
                 <div className="space-y-8 animate-fadeIn">
-                    <h1 className="text-4xl md:text-7xl font-semibold leading-tight">
+                    <h1 className="text-6xl md:text-7xl font-extralight leading-tight">
                         OUR<br />EXPERTISE
                     </h1>
 
