@@ -91,35 +91,29 @@ export default function Process() {
   return (
     <div 
       ref={containerRef} 
-      className="bg-black min-h-[300vh] relative"
-      style={{ 
-        fontFamily: 'Google Sans Flex, sans-serif',
-        fontWeight: 400
-      }}
+      className="min-h-[300vh] relative 
+                rounded-[30px] md:rounded-[40px] border-t border-l border-r border-zinc-900 bg-black
+                "
+      
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <div className="max-w-[1400px] mx-auto w-full px-8 flex gap-10">
           <div className="flex-1 flex flex-col justify-center">
             <div className="mb-6">
-              <span className="text-white bg-neutral-900 px-4 py-2 rounded-full text-lg inline-flex items-center shadow-[0_-8px_12px_rgba(0,0,0,0.25)]">
+              <span className="text-white bg-neutral-900 px-4 py-2 rounded-full text-base inline-flex items-center shadow-[0_-8px_12px_rgba(0,0,0,0.25)]">
                 ⊛ Project Process
               </span>
             </div>
-            <h1 className="text-white font-light mb-6" style={{ fontSize: '120px', lineHeight: '1.1' }}>
+            <h1 className="text-white font-light mb-6 text-8xl">
               Process
             </h1>
-            <p className="text-gray-400 text-xl leading-relaxed max-w-lg mb-12">
+            <p className="text-gray-400 text-lg leading-relaxed max-w-lg mb-10">
               crafting bold visuals that inspire and elevate brands with thought process.
             </p>
             <div className="mb-6">
-              <span className="text-white bg-neutral-900 px-6 py-3 rounded-sm text-lg inline-flex items-center cursor-pointer hover:bg-neutral-700 transition-colors"
-                style={{
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  boxShadow: '0 0 20px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05)'
-                }}
-              >
-                See Projects
-              </span>
+               <button className="px-6 py-3 text-white text-base font-semibold rounded-xl border border-white/50 bg-black/20 backdrop-blur-md shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all duration-300">
+            See Projects
+          </button>
             </div>
           </div>
 
@@ -152,14 +146,14 @@ export default function Process() {
                     }}
                   >
                     <div 
-                      className="bg-neutral-900 rounded-[2.5rem] p-10 h-[350px] w-[750px] relative"
+                      className="bg-black rounded-[2.5rem] p-10 h-[350px] w-[750px] relative"
                       style={{
                         border: '2px solid rgba(255, 255, 255, 0.2)',
                         boxShadow:
                           '0 0 25px rgba(255, 255, 255, 0.25), 0 0 40px rgba(255, 255, 255, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.5)'
                       }}
                     >
-                      <div className='absolute top-6 right-6 w-10 h-10 rounded-full border border-neutral-700 text-neutral-400 flex items-center justify-center text-lg font-medium'>
+                      <div className='absolute top-6 right-6 w-10 h-10 rounded-full border bg-neutral-900 border-neutral-500 text-neutral-400 flex items-center justify-center text-lg font-medium'>
                         {card.step}
                       </div>
 
