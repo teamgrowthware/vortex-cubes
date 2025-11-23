@@ -24,7 +24,7 @@ export default function Home() {
     rounded-2xl 
     border border-white/60  
     transition duration-300
-    hover:border-white relative"
+    hover:border-white relative lg:mb-3"
     >
       <div
         className="
@@ -38,7 +38,7 @@ export default function Home() {
   );
 
   return (
-    <div className="relative min-h-[125vh] bg-black text-white flex flex-col items-center justify-center overflow-hidden px-4">
+    <div className="relative min-h-[110vh] bg-black text-white flex flex-col items-center justify-center overflow-hidden px-4 mb-6 pb-14">
       {/* Video */}
       <video
         autoPlay
@@ -52,7 +52,7 @@ export default function Home() {
       </video>
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-4xl text-center flex flex-col items-center mt-28 sm:mt-32 md:mt-26 px-2">
+      <div className="relative z-20 w-full max-w-4xl text-center flex flex-col items-center mt-28 sm:mt-32 md:mt-44 px-2">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-200/10 to-black/90 backdrop-blur-md rounded-full border border-white/50 mb-5 text-xs sm:text-sm">
           <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.95)]"></span>
