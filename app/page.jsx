@@ -36,12 +36,12 @@ import AlllProjects from "./components/Home/AlllProjects";
 import RecentWorks from "./components/Home/RecentWorks";
 import Process from "./components/Home/Process";
 import Services from "./components/Home/Services";
-import Institude from "./components/Home/Institude";
+
 import Faq from "./components/Home/Faq";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Testimonial from "./components/Home/Testimonial";
-import About from "./components/Home/OurExpertise";
+
 // import Contact from "./components/Home/Contact";
 
 export default function Page() {

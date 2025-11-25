@@ -6,7 +6,7 @@ export default function ClientReviewsPage() {
   const testimonials = [
     {
       name: "Samriddhi",
-      role: "Agro tech",
+      role: "Agro Tech",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
       text: "The user who registers to list their agricultural products, set prices, and manage their online inventory.",
       rating: 5
@@ -49,7 +49,7 @@ export default function ClientReviewsPage() {
     },
     {
       name: "Times Now India 24*7",
-      role: "News",
+      role: "News Media Industry",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
       text: "The team demonstrated strong research skills, timely reporting, and high editorial standards, making the news project a great success.",
       rating: 5
@@ -65,7 +65,7 @@ export default function ClientReviewsPage() {
 
     {
       name: "Scalyx",
-      role: "Finance",
+      role: "Finance Industry",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
       text: "This finance project is highly valuable, practical, and greatly enhances understanding of real-world financial concepts.",
       rating: 5
@@ -80,14 +80,14 @@ export default function ClientReviewsPage() {
 
      {
       name: "Finanza",
-      role: "Finance",
+      role: "Finance Industry",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
       text: "list all items or services with their quantities and prices, then calculate the total cost for each by multiplying quantity by price.",
       rating: 5
     },
     {
-      name: "Marshell Pvt Ltd",
-      role: "Accounting",
+      name: "Marshell Technologies Pvt Ltd",
+      role: "IT Industry",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
       text: "list all items or services with their quantities and prices, then calculate the total cost for each by multiplying quantity by price.",
       rating: 5

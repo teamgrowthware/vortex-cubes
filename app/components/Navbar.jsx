@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 
 
@@ -45,10 +46,9 @@ export default function Navbar() {
 
 <a href="#portfolio" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
 <a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a>
-{/* <a href="#institute" className="text-gray-400 hover:text-white transition-colors">Institute</a> */}
-<a href="/institute" className="text-gray-400 hover:text-white transition-colors">Institute</a>
+<Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link>
+<Link href="/institude" className="text-gray-400 hover:text-white transition-colors">Institude</Link>
 
-<a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
 
 
 
