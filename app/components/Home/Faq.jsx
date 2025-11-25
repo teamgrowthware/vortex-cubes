@@ -50,21 +50,23 @@ export default function Faq() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-black text-white px-6 md:px-20 pt-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        {/* LEFT SECTION: FAQ badge, heading, subtext, image, tags */}
-        <div className="flex flex-col gap-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/30 text-xs font-semibold select-none w-max">
-            <span className="w-2 h-2 bg-white rounded-full"></span>
+    <div className="w-full min-h-screen bg-black text-white px-4 sm:px-6 md:px-16 lg:px-24 pt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        {/* LEFT SECTION */}
+        <div className="flex flex-col gap-6 lg:gap-8">
+          {/* FAQ Badge */}
+          <div className="inline-flex items-center gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/30 text-sm sm:text-base md:text-lg font-semibold select-none w-max">
+            <span className="w-3 h-3 bg-white rounded-full"></span>
             <span>FAQ'S</span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-[72px] font-light leading-tight">Answers</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-[64px] lg:text-[72px] font-light leading-tight">
+            Answers
+          </h1>
 
           {/* Sub Text */}
-          <p className="text-[20px] text-gray-400 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
             Find answers to common questions about my design <br />
             process, services etc...
           </p>
@@ -76,17 +78,17 @@ export default function Faq() {
               alt="FAQ"
               width={800}
               height={520}
-              className="w-full h-[520px] object-cover grayscale hover:grayscale-0 transition-all duration-300"
+              className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[520px] object-cover grayscale "
             />
           </div>
 
           {/* Tags */}
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-2 sm:gap-4 flex-wrap">
             {["Product Design", "Brand Identity Design", "Branding"].map(
               (tag, index) => (
                 <div
                   key={index}
-                  className="px-5 py-2 bg-white/10 border border-white/20 rounded-xl text-[14px] font-medium select-none"
+                  className="px-3 sm:px-5 py-1.5 sm:py-2 bg-white/10 border border-white/20 rounded-xl text-xs sm:text-sm md:text-[14px] font-medium select-none"
                 >
                   {tag}
                 </div>
@@ -95,12 +97,12 @@ export default function Faq() {
           </div>
         </div>
 
-        {/* RIGHT SECTION: FAQ question-answer list */}
-        <div className="flex flex-col gap-5">
+        {/* RIGHT SECTION */}
+        <div className="flex flex-col gap-4 sm:gap-5">
           {faqList.map((item, index) => (
             <div
               key={index}
-              className="bg-[#1c1c1c] p-6 border border-white/20 rounded-2xl"
+              className="bg-[#1c1c1c] p-4 sm:p-6 md:p-6 border border-white/20 rounded-2xl"
             >
               {/* Question */}
               <button
@@ -110,8 +112,10 @@ export default function Faq() {
                 aria-controls={`faq-answer-${index}`}
                 id={`faq-question-${index}`}
               >
-                <span className="text-[17px] font-semibold">{item.q}</span>
-                <span className="text-[24px] font-bold">
+                <span className="text-sm sm:text-[17px] md:text-[18px] font-semibold">
+                  {item.q}
+                </span>
+                <span className="text-xl sm:text-2xl font-bold">
                   {openIndex === index ? "×" : "+"}
                 </span>
               </button>
@@ -121,7 +125,7 @@ export default function Faq() {
                 <p
                   id={`faq-answer-${index}`}
                   aria-labelledby={`faq-question-${index}`}
-                  className="mt-4 text-gray-300 text-[16px] leading-relaxed"
+                  className="mt-3 sm:mt-4 text-gray-300 text-sm sm:text-[16px] md:text-[16px] leading-relaxed"
                 >
                   {item.a}
                 </p>

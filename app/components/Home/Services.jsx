@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import React from "react";
@@ -49,11 +47,10 @@ export default function Services() {
   ];
 
   return (
-    <div className="w-full bg-black text-white px-4 sm:px-6 lg:px-12 py-16">
-
-      {/* INTERNAL CSS for scrolling */}
+    <div className="w-full bg-black text-white px-4 sm:px-6 lg:px-12 py-12 md:py-16 -mt-10 md:-mt-16">
+      {/* ANIMATION CSS */}
       <style jsx>{`
-        @keyframes scroll-left {
+        @keyframes scroll-row {
           0% {
             transform: translateX(0);
           }
@@ -61,30 +58,30 @@ export default function Services() {
             transform: translateX(-50%);
           }
         }
-        .tag-scroll {
+        .scroll-animation {
+          white-space: nowrap;
           display: flex;
-          animation: scroll-left 15s linear infinite;
+          animation: scroll-row 10s linear infinite;
         }
       `}</style>
 
-      {/* Badge */}
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 bg-white/5 backdrop-blur-md rounded-full border border-white/20 text-xs">
-        <span className="w-2 h-2 bg-white rounded-full"></span>
-        <span>Our Services</span>
-      </div>
+     {/* Header Badge */}
+<div className="inline-flex items-center gap-3 px-6 py-2 mb-4 bg-white/5 backdrop-blur-md rounded-full border border-white/20 text-sm sm:text-base md:text-lg">
+  <span className="w-3 h-3 bg-white rounded-full"></span>
+  <span>Our Services</span>
+</div>
 
       {/* Title */}
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-light leading-tight mb-4">
         Services
       </h1>
 
-      {/* Subtitle */}
       <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-4xl mb-14">
         Empowering businesses with robust digital solutions—from engineering to cloud to intelligent automation.
       </p>
 
       {/* Service Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 mb-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10 mb-16">
         {services.map((service, index) => (
           <div
             key={index}
@@ -104,15 +101,26 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Bottom Auto-Scrolling Tags */}
-      <div className="w-full overflow-hidden select-none pt-6 sm:pt-8">
-        <div className="tag-scroll whitespace-nowrap flex gap-4 sm:gap-6">
-          {[...tags, ...tags].map((tag, index) => (
+      {/* Scrolling Tags */}
+      <div className="w-full overflow-hidden select-none space-y-4">
+        {/* Row 1 */}
+        <div className="scroll-animation gap-6">
+          {[...tags, ...tags].map((tag, i) => (
             <span
-              key={index}
-              // className="px-4 sm:px-5 py-2 bg-[#111]/60 border border-white/10 text-white/70 rounded-full text-xs sm:text-sm hover:bg-white/10 hover:text-white cursor-pointer transition"
-              className="px-6 sm:px-7 py-3 bg-[#111]/60 border border-white/10 text-white/80 rounded-full text-sm sm:text-base font-medium hover:bg-white/10 hover:text-white cursor-pointer transition"
+              key={i}
+              className="px-5 py-2 bg-[#111]/60 border border-white/10 text-white/70 rounded-full text-sm hover:bg-white/10 hover:text-white transition cursor-pointer"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
 
+        {/* Row 2 with delay */}
+        <div className="scroll-animation gap-6" style={{ animationDelay: "-7.5s" }}>
+          {[...tags, ...tags].map((tag, i) => (
+            <span
+              key={i}
+              className="px-5 py-2 bg-[#111]/60 border border-white/10 text-white/70 rounded-full text-sm hover:bg-white/10 hover:text-white transition cursor-pointer"
             >
               {tag}
             </span>

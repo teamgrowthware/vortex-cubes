@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from 'react';
 import { Code, Rocket, Users, Award, ChevronRight, Menu, X } from 'lucide-react';
 
@@ -65,7 +66,7 @@ export default function DevInstitute() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <div className="inline-block mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm">
-            ✨ Crafting Unique Developer Identities
+           Crafting Unique Developer Identities
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -110,7 +111,9 @@ export default function DevInstitute() {
       </section>
 
       {/* Courses Section */}
-      <section id="courses" className="py-20 relative">
+      {/* <section id="courses" className="py-20 relative"> */}
+      <section id="courses" className="py-16 relative -mt-6 sm:-mt-8 md:-mt-12 lg:-mt-16">
+
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -168,7 +171,7 @@ export default function DevInstitute() {
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide text-gray-300">Key Topics</h4>
+                  {/* <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide text-gray-300">Key Topics</h4> */}
                   <div className="flex flex-wrap gap-2">
                     {course.topics.map((topic, idx) => (
                       <span key={idx} className="bg-white/10 px-3 py-1 rounded-full text-xs">
@@ -185,7 +188,8 @@ export default function DevInstitute() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 relative bg-white/5">
+      <section className="py-20 relative bg-white/5 mt-0 md:-mt-12">
+
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">

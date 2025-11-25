@@ -42,8 +42,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Testimonial from "./components/Home/Testimonial";
 import About from "./components/Home/OurExpertise";
-import Contact from "./components/Home/Contact";
-
+// import Contact from "./components/Home/Contact";
 
 export default function Page() {
   return (
@@ -56,17 +55,21 @@ export default function Page() {
           <Home />
         </div>
 
-         <div id="about">
+        {/* <div id="about">
           <About Us/>
-        </div>
+        </div> */}
 
         {/* Portfolio Section */}
         <div id="portfolio">
           <AlllProjects />
         </div>
 
-        <div className="p-8">
+        <div id="about">
           <ExpertiseSection />
+        </div>
+
+        <div className="p-8">
+          {/* <ExpertiseSection /> */}
           <RecentWorks />
           <Process />
 
@@ -75,23 +78,23 @@ export default function Page() {
             <Services />
           </div>
 
-           {/* Institude Section */}
+          {/* Institude Section
           <div id="institude">
             <Institude />
-          
+            </div> */}
 
+            
 
           <Testimonial />
           <Faq />
         </div>
-</div>
- <div id="contact">
+      </div>
+      {/* <div id="contact">
             <Contact/>
-          </div>
-        {/* Contact Section */}
-        <div id="contact">
-          <Footer />
-        </div>
+          </div> */}
+      {/* Contact Section */}
+      <div id="contact">
+        <Footer />
       </div>
     </>
   );

@@ -1,4 +1,3 @@
-
 import { Instagram, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -32,20 +31,31 @@ export default function Footer() {
         </button>
 
         {/* Social Icons */}
-        <div className="flex items-center gap-6 mt-6 text-white">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
+        <div className="flex flex-wrap items-center gap-6 mt-6 text-white justify-center">
+          <a
+            href="https://www.instagram.com/_vortexcube_?igsh=MTRobjFvYTA4eTRhcQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-pink-500 transition-colors"
+          >
             <Instagram size={22} />
           </a>
 
-          <span className="text-white/30">|</span>
-
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
+          <a
+            href="https://www.linkedin.com/company/vortexcubes/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500 transition-colors"
+          >
             <Linkedin size={22} />
           </a>
 
-          <span className="text-white/30">|</span>
-
-          <a href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
+          <a
+            href="https://wa.me/9301946303"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-green-500 transition-colors"
+          >
             {/* WhatsApp SVG Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -58,9 +68,10 @@ export default function Footer() {
             </svg>
           </a>
 
-          <span className="text-white/30">|</span>
-
-          <a href="mailto:info@vortexcubes.com" className="hover:text-gray-300 transition">
+          <a
+            href="mailto:info@vortexcubes.com"
+            className="hover:text-red-500 transition-colors"
+          >
             <Mail size={22} />
           </a>
         </div>

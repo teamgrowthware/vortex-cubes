@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
+
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +45,9 @@ export default function Navbar() {
 
 <a href="#portfolio" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
 <a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a>
-<a href="#institute" className="text-gray-400 hover:text-white transition-colors">Institute</a>
+{/* <a href="#institute" className="text-gray-400 hover:text-white transition-colors">Institute</a> */}
+<a href="/institute" className="text-gray-400 hover:text-white transition-colors">Institute</a>
+
 <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
 
 
@@ -64,7 +68,9 @@ export default function Navbar() {
           <a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a>
           <a href="#" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
           <a href="#" className="text-gray-400 hover:text-white transition-colors">Services</a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">Institute</a>
+          {/* <a href="#" className="text-gray-400 hover:text-white transition-colors">Institute</a> */}
+          <a href="/institute" className="text-gray-400 hover:text-white transition-colors">Institute</a>
+
           <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
         </div>
       )}
