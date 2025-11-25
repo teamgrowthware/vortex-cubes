@@ -1,28 +1,97 @@
-import Home from './components/Home/Home';
-import ExpertiseSection from './components/Home/OurExpertise';
-import AlllProjects from './components/Home/AlllProjects';
-import RecentWorks from './components/Home/RecentWorks';
-import Process from './components/Home/Process';
-import Services from './components/Home/Services';
-import Faq from './components/Home/Faq';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+// import Home from './components/Home/Home';
+// import ExpertiseSection from './components/Home/OurExpertise';
+// import AlllProjects from './components/Home/AlllProjects';
+// import RecentWorks from './components/Home/RecentWorks';
+// import Process from './components/Home/Process';
+// import Services from './components/Home/Services';
+// import Faq from './components/Home/Faq';
+// import Navbar from './components/Navbar';
+// import Footer from './components/Footer';
+// import Testimonial from './components/Home/Testimonial';
+
+// export default function Page() {
+//   return (
+//     <>
+//       <div className='bg-black'>
+//         <Navbar/>
+//         <Home/>
+//         <AlllProjects/>
+//         <div className='p-8'>
+//           <ExpertiseSection/>
+//           <RecentWorks/>
+//           <Process/>
+//           <Services/>
+//           <Testimonial/>
+//           <Faq/>
+//         </div>
+//         <Footer/>
+//       </div>
+//     </>
+//   );
+// }
+
+import Home from "./components/Home/Home";
+import ExpertiseSection from "./components/Home/OurExpertise";
+import AlllProjects from "./components/Home/AlllProjects";
+import RecentWorks from "./components/Home/RecentWorks";
+import Process from "./components/Home/Process";
+import Services from "./components/Home/Services";
+import Institude from "./components/Home/Institude";
+import Faq from "./components/Home/Faq";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Testimonial from "./components/Home/Testimonial";
+import About from "./components/Home/OurExpertise";
+import Contact from "./components/Home/Contact";
+
 
 export default function Page() {
   return (
     <>
-      <div className='bg-black'>
-        <Navbar/>
-        <Home/>
-        <AlllProjects/>
-        <div className='p-8'>
-          <ExpertiseSection/>
-          <RecentWorks/>
-          <Process/>
-          <Services/>
-          <Faq/>
+      <div className="bg-black">
+        <Navbar />
+
+        {/* Home Section */}
+        <div id="home">
+          <Home />
         </div>
-        <Footer/>
+
+         <div id="about">
+          <About Us/>
+        </div>
+
+        {/* Portfolio Section */}
+        <div id="portfolio">
+          <AlllProjects />
+        </div>
+
+        <div className="p-8">
+          <ExpertiseSection />
+          <RecentWorks />
+          <Process />
+
+          {/* Services Section */}
+          <div id="services">
+            <Services />
+          </div>
+
+           {/* Institude Section */}
+          <div id="institude">
+            <Institude />
+          
+
+
+          <Testimonial />
+          <Faq />
+        </div>
+</div>
+ <div id="contact">
+            <Contact/>
+          </div>
+        {/* Contact Section */}
+        <div id="contact">
+          <Footer />
+        </div>
       </div>
     </>
   );

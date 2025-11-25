@@ -110,7 +110,7 @@ export default function Home() {
           100% { transform: translateX(-50%); }
         }
         .animate-scrollSlow {
-          animation: scrollSlow 18s linear infinite;
+          animation: scrollSlow 15s linear infinite;
         }
       `}</style>
     </div>

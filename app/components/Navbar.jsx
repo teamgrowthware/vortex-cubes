@@ -36,12 +36,18 @@ export default function Navbar() {
 
       {/* Desktop Links */}
       <div className="hidden md:flex items-center gap-8 text-base tracking-wide pr-16">
-        <a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a>
-        <a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a>
-        <a href="#" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
-        <a href="#" className="text-gray-400 hover:text-white transition-colors">Services</a>
-        <a href="#" className="text-gray-400 hover:text-white transition-colors">Institute</a>
-        <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+     
+<a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a>
+<a href="#about" className="text-gray-400 hover:text-white transition-colors">About Us</a>
+
+
+<a href="#portfolio" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+<a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a>
+<a href="#institute" className="text-gray-400 hover:text-white transition-colors">Institute</a>
+<a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+
+
+
       </div>
 
       {/* Mobile Hamburger */}
@@ -65,3 +71,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+

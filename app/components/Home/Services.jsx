@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import React from "react";
@@ -49,6 +51,22 @@ export default function Services() {
   return (
     <div className="w-full bg-black text-white px-4 sm:px-6 lg:px-12 py-16">
 
+      {/* INTERNAL CSS for scrolling */}
+      <style jsx>{`
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .tag-scroll {
+          display: flex;
+          animation: scroll-left 15s linear infinite;
+        }
+      `}</style>
+
       {/* Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 bg-white/5 backdrop-blur-md rounded-full border border-white/20 text-xs">
         <span className="w-2 h-2 bg-white rounded-full"></span>
@@ -88,11 +106,13 @@ export default function Services() {
 
       {/* Bottom Auto-Scrolling Tags */}
       <div className="w-full overflow-hidden select-none pt-6 sm:pt-8">
-        <div className="flex gap-4 sm:gap-6 whitespace-nowrap tag-scroll">
+        <div className="tag-scroll whitespace-nowrap flex gap-4 sm:gap-6">
           {[...tags, ...tags].map((tag, index) => (
             <span
               key={index}
-              className="px-4 sm:px-5 py-2 bg-[#111]/60 border border-white/10 text-white/70 rounded-full text-xs sm:text-sm hover:bg-white/10 hover:text-white cursor-pointer transition"
+              // className="px-4 sm:px-5 py-2 bg-[#111]/60 border border-white/10 text-white/70 rounded-full text-xs sm:text-sm hover:bg-white/10 hover:text-white cursor-pointer transition"
+              className="px-6 sm:px-7 py-3 bg-[#111]/60 border border-white/10 text-white/80 rounded-full text-sm sm:text-base font-medium hover:bg-white/10 hover:text-white cursor-pointer transition"
+
             >
               {tag}
             </span>
