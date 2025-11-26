@@ -15,47 +15,7 @@ export default function DevInstitute() {
 
   return (
     <div className="bg-black text-white min-h-screen">
-      {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/20' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold">
-              DevInstitute
-            </div>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="hover:text-gray-300 transition">Home</a>
-              <a href="#courses" className="hover:text-gray-300 transition">Courses</a>
-              <a href="#about" className="hover:text-gray-300 transition">About</a>
-              <a href="#contact" className="hover:text-gray-300 transition">Contact</a>
-              <button className="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition font-semibold">
-                Enroll Now
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button className="md:hidden" onClick={() => setMobileMenu(!mobileMenu)}>
-              {mobileMenu ? <X /> : <Menu />}
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {mobileMenu && (
-            <div className="md:hidden mt-4 pb-4 space-y-4">
-              <a href="#home" className="block hover:text-gray-300 transition">Home</a>
-              <a href="#courses" className="block hover:text-gray-300 transition">Courses</a>
-              <a href="#about" className="block hover:text-gray-300 transition">About</a>
-              <a href="#contact" className="block hover:text-gray-300 transition">Contact</a>
-              <button className="w-full bg-white text-black px-6 py-2 rounded-full font-semibold">
-                Enroll Now
-              </button>
-            </div>
-          )}
-        </div>
-      </nav>
-
-      {/* Hero Section */}
+       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 opacity-20">

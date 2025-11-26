@@ -60,7 +60,7 @@ const AlllProjects = () => {
         </div>
 
         {/* Bottom Buttons */}
-        <div className="flex justify-center gap-6 mt-12 flex-wrap">
+        {/* <div className="flex justify-center gap-6 mt-12 flex-wrap">
           <button className="text-white font-semibold text-base border-b border-white/70 hover:border-white transition-all duration-300">
             All Projects
           </button>
@@ -68,7 +68,7 @@ const AlllProjects = () => {
           <button className="px-6 py-3 text-white text-base font-semibold rounded-xl border border-white/50 bg-black/20 backdrop-blur-md shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all duration-300">
             View All Projects
           </button>
-        </div>
+        </div> */}
 
       </div>
     </div>
