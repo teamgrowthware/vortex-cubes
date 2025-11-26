@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Navbar from "../components/Navbar";
 import { Code, Rocket, Users, Award, ChevronRight, Menu, X } from 'lucide-react';
 
 export default function DevInstitute() {
@@ -14,7 +15,9 @@ export default function DevInstitute() {
   }, []);
 
   return (
+    
     <div className="bg-black text-white min-h-screen">
+      <Navbar />
        {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
