@@ -70,6 +70,7 @@ const AlllProjects = () => {
           </button>
         </div> */}
 
+
       </div>
     </div>
   );

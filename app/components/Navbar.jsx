@@ -69,9 +69,9 @@ export default function Navbar() {
           <a href="#" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
           <a href="#" className="text-gray-400 hover:text-white transition-colors">Services</a>
           {/* <a href="#" className="text-gray-400 hover:text-white transition-colors">Institute</a> */}
-          <a href="/institute" className="text-gray-400 hover:text-white transition-colors">Institute</a>
+          <a href="/institude" className="text-gray-400 hover:text-white transition-colors">Institude</a>
 
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
         </div>
       )}
     </nav>
