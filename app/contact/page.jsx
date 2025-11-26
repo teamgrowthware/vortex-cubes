@@ -1,8 +1,4 @@
-
-
-
 "use client";
-
 import React, { useState } from "react";
 import Navbar from "../components/Navbar"; // ✅ Correct path
 import {
@@ -107,3 +103,4 @@ const Page = () => {
 };
 
 export default Page;
+
