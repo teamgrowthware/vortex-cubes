@@ -139,11 +139,12 @@ export default function DevInstitute() {
 
         <div
         
-className="relative -mt-40 sm:-mt-56 md:-mt-52"
+        className="max-w-7xl mx-auto px-10"
         
         >
 
-          <div className="text-center mb-16">
+         <div className="text-center mb-16 -mt-12 md:-mt-28">
+
            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Our <span className="text-white">Courses</span>
             </h2>
