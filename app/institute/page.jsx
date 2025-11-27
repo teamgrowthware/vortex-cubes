@@ -136,11 +136,9 @@ export default function DevInstitute() {
   id="courses"
   
 >
-
-        <div
+<div
         
-        className="max-w-7xl mx-auto px-10"
-        
+className="max-w-7xl mx-auto px-10"
         >
 
          <div className="text-center mb-16 -mt-12 md:-mt-28">

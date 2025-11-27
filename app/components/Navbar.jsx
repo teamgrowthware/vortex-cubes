@@ -143,12 +143,12 @@ export default function Navbar() {
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <Link onClick={closeMenu} href="/#home">Home</Link>
-        <Link onClick={closeMenu} href="/#about">About Us</Link>
-        <Link onClick={closeMenu} href="/#portfolio">Portfolio</Link>
-        <Link onClick={closeMenu} href="/#services">Services</Link>
-        <Link onClick={closeMenu} href="/institute">Institute</Link>
-        <Link onClick={closeMenu} href="/contact">Contact</Link>
+        <Link onClick={closeMenu} href="/#home" className="text-white hover:text-gray-300 transition">Home</Link>
+        <Link onClick={closeMenu} href="/#about" className="text-white hover:text-gray-300 transition">About Us</Link>
+        <Link onClick={closeMenu} href="/#portfolio" className="text-white hover:text-gray-300 transition">Portfolio</Link>
+        <Link onClick={closeMenu} href="/#services" className="text-white hover:text-gray-300 transition">Services</Link>
+        <Link onClick={closeMenu} href="/institute" className="text-white hover:text-gray-300 transition">Institute</Link>
+        <Link onClick={closeMenu} href="/contact" className="text-white hover:text-gray-300 transition">Contact</Link>
       </div>
     </nav>
   );
