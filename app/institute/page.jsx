@@ -1,20 +1,68 @@
 "use client";
-
-import React, { useState, useEffect } from 'react';
-import { Code, Rocket, Users, Award, ChevronRight, X, Phone, MessageCircle } from 'lucide-react';
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-export default function DevInstitute() {
-  const [scrolled, setScrolled] = useState(false);
+// Lucide Icons (SINGLE IMPORT ✅)
+import {
+  TrendingUp,
+  Share2,
+  Target,
+  BarChart,
+  ShieldCheck,
+  Rocket,
+  Award,
+  MessageCircle,
+  X,
+  Phone,
+
+
+  Code as CodeIcon,
+  Users as UsersIcon,
+  Layers,
+  Navigation,
+  Plug,
+  Bell,
+  Cloud,
+  Upload,
+  Server,
+  Lock,
+  Database,
+} from "lucide-react";
+
+// React Icons
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaAws,
+  FaFigma,
+} from "react-icons/fa";
+
+import {
+  SiExpress,
+  SiMongodb,
+  SiNetlify,
+  SiRender,
+  SiAngular,
+  SiTypescript,
+  SiDart,
+  SiFlutter,
+  SiFirebase,
+} from "react-icons/si";
+
+import { Code,Users } from "lucide-react";
+
+
+
+export default function Institute() {
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
 
-  const PHONE_NUMBER = "91 9301946303";
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const PHONE_NUMBER = "919301946303";
 
   const handleApplyClick = (course) => {
     setSelectedCourse(course);
@@ -22,288 +70,388 @@ export default function DevInstitute() {
   };
 
   const handleWhatsApp = () => {
-  if (!selectedCourse) return;
-
-  const message = `Hi! I'm interested in applying for the ${selectedCourse.title} course.`;
-
-  window.open(
-    `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`,
-    "_blank"
-  );
-};
-
+    if (!selectedCourse) return;
+    const message = `Hi! I'm interested in applying for the ${selectedCourse.title} course.`;
+    window.open(
+      `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  };
 
   const handlePhone = () => {
-  window.location.href = `tel:+${PHONE_NUMBER}`;
-};
+    window.location.href = `tel:+${PHONE_NUMBER}`;
+  };
 
-
+  /* ===== COURSES DATA ===== */
   const courses = [
     {
       title: "Full Stack Development (MERN)",
-      desc: "Master MongoDB, Express.js, React, and Node.js to build complete web applications from scratch",
-      duration: "6 Months",
+      desc:
+        "Master the MERN stack to build powerful, scalable, and modern full-stack web applications from front end to back end.",
+      duration: "12 month learning + 6 month practice",
       level: "Beginner to Advanced",
       topics: [
-        "MongoDB",
-        "Express.js",
-        "React.js",
-        "Node.js",
-        "REST APIs",
-        "Authentication",
+        { label: "HTML", icon: <FaHtml5 /> },
+        { label: "CSS", icon: <FaCss3Alt /> },
+        { label: "JavaScript", icon: <FaJs /> },
+        { label: "React.js", icon: <FaReact /> },
+        { label: "Node.js", icon: <FaNodeJs /> },
+        { label: "Express.js", icon: <SiExpress /> },
+        { label: "JWT Authentication", icon: <Lock /> },
+        { label: "MongoDB", icon: <SiMongodb /> },
+        { label: "APIs", icon: <Server /> },
+        {label: "Deployment",icon: <FaGitAlt />},
+        {label: "Git",icon: <FaGitAlt />},
+          {label: "Netlify", icon:<SiNetlify />},
+          {label: "Render", icon:<SiRender />},
+          {label: "Aws", icon:<FaAws />},
       ],
     },
+
     {
       title: "Full Stack Development (MEAN)",
-      desc: "Learn MongoDB, Express.js, Angular, and Node.js to create dynamic and scalable web solutions",
-      duration: "6 Months",
+      desc:
+        "Master the MEAN stack and learn to build fast, scalable, and dynamic full-stack applications.",
+      duration: "12 month learning + 6 month practice",
       level: "Beginner to Advanced",
       topics: [
-        "MongoDB",
-        "Express.js",
-        "Angular",
-        "Node.js",
-        "TypeScript",
+        { label: "HTML", icon: <FaHtml5 /> },
+        { label: "CSS", icon: <FaCss3Alt /> },
+        { label: "JavaScript", icon: <FaJs /> },
+        { label: "Angular", icon: <SiAngular /> },
+        { label: "TypeScript", icon: <SiTypescript /> },
+        { label: "Node.js", icon: <FaNodeJs /> },
+        { label: "Express.js", icon: <SiExpress /> },
+        { label: "JWT Authentication", icon: <Lock /> },
+        { label: "MongoDB", icon: <SiMongodb /> },
+        { label: "APIs", icon: <Server /> },
+      
+        {label: "Git",icon: <FaGitAlt />},
+          {label: "Netlify", icon:<SiNetlify />},
+          {label: "Render", icon:<SiRender />},
+          {label: "Aws", icon:<FaAws />},
       ],
     },
+    
+
     {
-      title: "UI/UX Design",
-      desc: "Create stunning user interfaces and exceptional user experiences with modern design principles",
-      duration: "4 Months",
-      level: "All Levels",
-      topics: [
-        "Figma",
-        "Wireframing",
-        "Prototyping",
-        "User Research",
-        "Design Systems",
-        "Usability Testing",
-      ],
-    },
-    {
-      title: "Digital Marketing",
-      desc: "Master digital marketing strategies and grow your online presence with data-driven campaigns",
-      duration: "4 Months",
-      level: "All Levels",
-      topics: [
-        "Fundamentals of Digital Marketing",
-        "Search Engine Optimization (SEO)",
-        "Search Engine Marketing (SEM / PPC)",
-        "Social Media Marketing (SMM)",
-        "Content Marketing",
-       
-"Affiliate Marketing & Influencer Marketing",
-        "Web Analytics & Data Analysis",
-        "Mobile Marketing",
-        "E-commerce & Online Sales",
-      ],
-    },
-  ];
+    title: "Mobile App Development (React Native)",
+    desc: "Build high-performance Android & iOS apps using React Native.",
+    duration: "12 month learning + 6 month practice",
+    level: "Beginner to Advanced",
+    topics: [
+      { label: "JavaScript", icon: <CodeIcon /> },
+      { label: "React Native", icon: <Layers /> },
+      { label: "Components & Hooks", icon: <CodeIcon /> },
+      { label: "Navigation", icon: <Navigation /> },
+      { label: "API Integration", icon: <Plug /> },
+      { label: "State Management", icon: <Layers /> },
+      { label: "Push Notifications", icon: <Bell /> },
+      { label: "Firebase", icon: <Cloud /> },
+      { label: "App Publishing", icon: <Upload /> },
+    ],
+  },
+
+  {
+  title: "Digital Marketing",
+  desc: "Master SEO, social media, paid ads, and conversion-driven marketing strategies.",
+  duration: "12 month learning + 6 month practice",
+  level: "All Levels",
+  topics: [
+    { label: "SEO (On-Page & Off-Page)", icon: <TrendingUp /> },
+    { label: "Content Marketing", icon: <CodeIcon /> },
+    { label: "Social Media Marketing (SMM)", icon: <Share2 /> },
+    { label: "Google Ads (PPC)", icon: <Target /> },
+    { label: "Facebook & Instagram Ads", icon: <Target /> },
+    { label: "Email Marketing", icon: <MessageCircle /> },
+    { label: "Affiliate Marketing", icon: <UsersIcon /> },
+    { label: "Influencer Marketing", icon: <UsersIcon /> },
+    { label: "Analytics & Reporting", icon: <BarChart /> },
+    { label: "Conversion Rate Optimization (CRO)", icon: <TrendingUp /> },
+    { label: "Online Reputation Management (ORM)", icon: <ShieldCheck /> },
+    { label: "Marketing Automation", icon: <Rocket /> },
+    { label: "Lead Generation", icon: <Target /> },
+    { label: "Brand Strategy", icon: <Award /> },
+  ],
+},
+
+
+  {
+  title: "Mobile App Development (Flutter)",
+  desc: "Create beautiful, fast cross-platform mobile apps using Flutter & Dart.",
+  duration: "12 month learning + 6 month practice",
+  level: "Beginner to Advanced",
+  topics: [
+    { label: "Dart Programming", icon: <SiDart /> },
+    { label: "Flutter Fundamentals", icon: <SiFlutter /> },
+    { label: "UI Layouts & Widgets", icon: <CodeIcon /> },
+    { label: "State Management (Provider / Bloc)", icon: <Layers /> },
+    { label: "Navigation & Routing", icon: <Navigation /> },
+    { label: "REST API Integration", icon: <Server /> },
+    { label: "Firebase Integration", icon: <SiFirebase /> },
+    { label: "Authentication (OTP / Google)", icon: <Lock /> },
+    { label: "Push Notifications", icon: <Bell /> },
+    { label: "Local Storage (Hive / SQLite)", icon: <Database /> },
+    { label: "App Performance Optimization", icon: <Rocket /> },
+    { label: "App Publishing (Play Store)", icon: <Upload /> },
+  ],
+},
+{
+  title: "UI / UX Design",
+  desc: "Create stunning interfaces and meaningful, user-centered digital experiences.",
+  duration: "12 month learning + 6 month practice",
+  level: "All Levels",
+  topics: [
+    { label: "Design Fundamentals", icon: <CodeIcon /> },
+    { label: "User Research & Personas", icon: <UsersIcon /> },
+    { label: "Information Architecture", icon: <Layers /> },
+    { label: "Wireframing", icon: <CodeIcon /> },
+    { label: "Prototyping", icon: <CodeIcon /> },
+    { label: "UI Design (Figma)", icon: <FaFigma /> },
+    { label: "Design Systems", icon: <Layers /> },
+    { label: "Usability Testing", icon: <BarChart /> },
+    { label: "Accessibility (WCAG)", icon: <ShieldCheck /> },
+    { label: "UX Writing & Microcopy", icon: <MessageCircle /> },
+    { label: "Interaction Design", icon: <Navigation /> },
+    { label: "Design Handoff to Developers", icon: <Rocket /> },
+  ],
+},
+
+];
 
   return (
-    <div className="bg-black text-white min-h-screen">
-    
+    <div className="bg-black text-white min-h-screen overflow-x-hidden">
       <Navbar />
+      
+    {/* HERO */}
+      <section className="pt-24 pb-10 text-center px-6">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+             “ Learn development the way  <br />the industry works. 
+             <span className="text-white"> ”</span>
 
-      {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-block mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm">
-            Crafting Unique Developer Identities
-          </div>
+           </h1>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Branding that you
-            <br />
-            <span className="text-white">can't ignore</span>
-          </h1>
-          
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Transform your coding skills into a thriving career. Learn from industry experts and build real-world projects.
-          </p>
         </div>
-      </section>
+       </section>
 
-      {/* Courses Section */}
-     <section
-  id="courses"
-  
+       
+   <section
+  id="about"
+  className="pt-10 md:pt-14 pb-20 px-6"
 >
-<div
-        
-className="max-w-7xl mx-auto px-10"
-        >
+  <div className="max-w-4xl mx-auto text-center">
+    
+    <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+      :- About <span className="text-white">Our Institute</span>
+    </h2>
 
-         <div className="text-center mb-16 -mt-12 md:-mt-28">
+    <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+      We are a leading tech education institute at 
+      <span className="text-white font-semibold underline"> VortexCubes</span>, 
+      dedicated to transforming aspiring developers into industry-ready professionals. 
+      With a strong focus on practical, hands-on learning, we bridge the gap between academic 
+      knowledge and real-world application. Our courses are designed to align with current 
+      market demands.
+    </p>
 
-           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Our <span className="text-white">Courses</span>
-            </h2>
-            <p className="text-gray-400 text-lg">
-              Master the skills that matter in today's tech industry
-            </p>
-          </div>
+  </div>
+</section>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {courses.map((course, i) => (
-              <div key={i} className="group relative bg-gradient-to-br from-white/5 via-white/[0.02] to-transparent border border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all duration-500 overflow-hidden">
-                {/* Animated gradient background on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Glowing effect */}
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-all duration-500"></div>
-                
-                <div className="relative z-10">
-                  {/* Badge */}
-                  <div className="inline-block mb-4 px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-xs font-semibold">
-                    ⚡ Popular Choice
-                  </div>
 
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-white transition-colors">{course.title}</h3>
-                  <p className="text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300 transition-colors">{course.desc}</p>
-                  
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-xl text-sm flex items-center gap-2 group-hover:bg-white/10 group-hover:border-white/20 transition-all">
-                      <span className="text-lg">📅</span>
-                      <span>{course.duration}</span>
-                    </div>
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-xl text-sm flex items-center gap-2 group-hover:bg-white/10 group-hover:border-white/20 transition-all">
-                      <span className="text-lg">📊</span>
-                      <span>{course.level}</span>
-                    </div>
-                  </div>
 
-                  {/* Topics with better styling */}
-                  <div className="mb-8">
-                    <h4 className="text-xs font-semibold text-gray-500 mb-3 uppercase tracking-wider">What You'll Learn</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {course.topics.map((topic, idx) => (
-                        <span key={idx} className="bg-white/5 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-lg text-xs font-medium group-hover:bg-white/10 group-hover:border-white/20 transition-all">
-                          {topic}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
 
-                  {/* Premium Apply Button */}
-                  <button 
-                    onClick={() => handleApplyClick(course)}
-                    className="w-full bg-white text-black px-6 py-4 rounded-2xl font-bold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:scale-[1.02] group-hover:shadow-white/20"
-                  >
-                    <span>Apply Now</span>
-                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
+      {/* COURSES */}
+      <section id="courses" className="px-6 py-16">
+       <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-center">
+          Our <span className="text-white">Courses</span>
+        </h2>
 
-                  {/* Bottom info */}
-                  <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
-                     <span className="flex items-center gap-1">
-                      ⭐ 4.9/5
-                    </span>
-                  </div>
-                </div>
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {courses.map((course, i) => (
+            <div
+              key={i}
+              className="border border-white/10 bg-white/5 p-8 rounded-2xl flex flex-col"
+            >
+              <h3 className="text-2xl font-bold mb-3">{course.title}</h3>
+              <p className="text-gray-400 mb-6">{course.desc}</p>
+
+              <div className="flex flex-wrap gap-3 mb-6">
+                <span className="bg-white/10 px-4 py-2 rounded-xl text-sm">
+                  📅 {course.duration}
+                </span>
+                <span className="bg-white/10 px-4 py-2 rounded-xl text-sm">
+                  📊 {course.level}
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
+
+              <div className="flex flex-wrap gap-2 mb-8">
+                {course.topics.map((topic, idx) => (
+                  <span
+                    key={idx}
+                    className="flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs"
+                  >
+                    <span className="text-base">{topic.icon}</span>
+                    {topic.label}
+                  </span>
+                ))}
+              </div>
+
+              <button
+                onClick={() => handleApplyClick(course)}
+                className="mt-auto bg-white text-black px-3 py-1.5 text-xs font-medium rounded-md w-fit"
+              >
+                Apply Now
+              </button>
+            </div>
+          ))}
+        </div> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {courses.map((course, i) => (
+    // <div
+    //   key={i}
+    //   className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-lg hover:bg-white/10"
+    // >
+    //   <h3 className="text-xl md:text-2xl font-bold mb-2">{course.title}</h3>
+    //   <p className="text-gray-400 text-sm mb-4 line-clamp-3">{course.desc}</p>
+
+    //   <div className="flex flex-wrap gap-2 mb-4">
+    //     <span className="bg-white/10 px-3 py-1 rounded-full text-xs">
+    //       📅 {course.duration}
+    //     </span>
+    //     <span className="bg-white/10 px-3 py-1 rounded-full text-xs">
+    //       📊 {course.level}
+    //     </span>
+    //   </div>
+
+    //   <div className="flex flex-wrap gap-2 mb-4">
+    //     {course.topics.map((topic, idx) => (
+    //       <span
+    //         key={idx}
+    //         className="flex items-center gap-1 bg-white/10 border border-white/10 px-2 py-1 rounded-lg text-xs hover:bg-white/20 transition-colors"
+    //       >
+    //         <span className="text-base">{topic.icon}</span>
+    //         {topic.label}
+    //       </span>
+    //     ))}
+    //   </div>
+
+    //   <button
+    //     onClick={() => handleApplyClick(course)}
+    //     className="mt-auto bg-gradient-to-r bg-white text-black py-2 px-4 text-sm font-semibold rounded-full hover:scale-130 transition-transform duration-300"
+        
+    //   >
+    //     Apply Now
+    //   </button>
+    // </div>
+    <div
+  key={i}
+  className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col 
+             transform transition-transform duration-300 ease-in-out
+             hover:scale-110 hover:shadow-2xl
+             focus-within:scale-110 active:scale-105
+             hover:bg-white/10"
+  tabIndex={0} // allows focus on mobile tap
+>
+  <h3 className="text-xl md:text-2xl font-bold mb-2">{course.title}</h3>
+  <p className="text-gray-400 text-sm mb-4 line-clamp-3">{course.desc}</p>
+
+  <div className="flex flex-wrap gap-2 mb-4">
+    <span className="bg-white/10 px-3 py-1 rounded-full text-xs">
+      📅 {course.duration}
+    </span>
+    <span className="bg-white/10 px-3 py-1 rounded-full text-xs">
+      📊 {course.level}
+    </span>
+  </div>
+
+  <div className="flex flex-wrap gap-2 mb-4">
+    {course.topics.map((topic, idx) => (
+      <span
+        key={idx}
+        className="flex items-center gap-1 bg-white/10 border border-white/10 px-2 py-1 rounded-lg text-xs hover:bg-white/20 transition-colors"
+      >
+        <span className="text-base">{topic.icon}</span>
+        {topic.label}
+      </span>
+    ))}
+  </div>
+
+  <button
+    onClick={() => handleApplyClick(course)}
+    className="mt-auto bg-white text-black py-2 px-4 text-sm font-semibold rounded-full hover:scale-105 transition-transform duration-300"
+  >
+    Apply Now
+  </button>
+</div>
+
+  ))}
+</div>
+
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 relative bg-white/5 mt-0 md:-mt-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Why Choose <span className="text-white">Institute</span>
-            </h2>
-            <p className="text-gray-400 text-lg">
-              Everything you need to become a successful developer
-            </p>
-          </div>
+      {/* FEATURES */}
+       <section id="features" className="py-20 bg-white/5">
+         <div className="max-w-7xl mx-auto px-6">
+           <h2 className="text-4xl md:text-5xl font-bold text-center mb-14">
+             Why Choose <span className="text-white">Institute</span>
+          </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Code,
-                title: "Expert Instructors",
-                desc: "Learn from industry professionals with years of experience",
-              },
-              {
-                icon: Rocket,
-                title: "Real Projects",
-                desc: "Build portfolio-worthy projects that impress employers",
-              },
-              {
-                icon: Users,
-                title: "Community",
-                desc: "Join a vibrant community of learners and mentors",
-              },
-              {
-                icon: Award,
-                title: "Certification",
-                desc: "Get recognized certifications valued by top companies",
-              },
-            ].map((feature, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+           {[Code, Rocket, Users, Award].map((Icon, i) => (
               <div
                 key={i}
-                className="group bg-white/5 border border-white/20 rounded-2xl p-6 hover:bg-white/10 hover:border-white/40 transition duration-300"
+                className="bg-white/10 p-6 rounded-2xl border border-white/20"
               >
-                <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                  <feature.icon className="w-7 h-7 text-black" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-400">{feature.desc}</p>
+                <Icon className="w-10 h-10 mb-4" />
+                <h3 className="text-xl font-semibold mb-2">
+                  {["Mentors", "Projects", "Community", "Certification"][i]}
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Industry-focused professional growth
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Apply Modal */}
-      {showApplyModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="relative bg-black border-2 border-white/20 rounded-2xl p-8 max-w-md w-full">
-            <button 
+
+      {/* APPLY MODAL — unchanged */}
+     {showApplyModal && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur flex items-center justify-center z-50">
+          <div className="bg-black border border-white/20 p-8 rounded-2xl w-full max-w-md relative">
+            <button
               onClick={() => setShowApplyModal(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white transition"
+              className="absolute top-4 right-4"
             >
-              <X className="w-6 h-6" />
+              <X />
             </button>
 
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-2">Apply for Course</h3>
-              <p className="text-gray-400 text-sm">{selectedCourse?.title}</p>
-            </div>
+            <h3 className="text-2xl font-bold mb-6 text-center">
+              Apply for {selectedCourse?.title}
+            </h3>
 
             <div className="space-y-4">
-              <button 
+              <button
                 onClick={handleWhatsApp}
-                className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-full font-semibold transition flex items-center justify-center gap-3"
+                className="w-full bg-green-600 text-white py-4 rounded-full flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-5 h-5" />
-                Apply via WhatsApp
+                <MessageCircle /> Apply via WhatsApp
               </button>
 
-              <button 
+              <button
                 onClick={handlePhone}
-                className="w-full bg-white text-black px-6 py-4 rounded-full font-semibold hover:bg-gray-200 transition flex items-center justify-center gap-3"
+                className="w-full bg-white text-black py-4 rounded-full flex items-center justify-center gap-2"
               >
-                <Phone className="w-5 h-5" />
-                Call to Apply
+                <Phone /> Call to Apply
               </button>
             </div>
-
-            <p className="text-gray-500 text-xs text-center mt-6">
-              Our team will get back to you within 24 hours
-            </p>
           </div>
         </div>
       )}
+       <Footer />
     </div>
   );
 }
+    

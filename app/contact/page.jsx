@@ -1,21 +1,17 @@
 "use client";
 import React, { useState } from "react";
-import Navbar from "../components/Navbar"; // ✅ Correct path
-import {
-  Mail,
-  Phone,
-  MapPin,
-  MessageCircle,
-} from "lucide-react";
+import Navbar from "../components/Navbar";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
-const Page = () => {
+export default function Page() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    subject: "",
     message: "",
   });
+
+  const [success, setSuccess] = useState(false);
 
   const contactInfo = [
     {
@@ -33,74 +29,215 @@ const Page = () => {
     {
       icon: MapPin,
       title: "Address",
-      details: "106, Navrang Plaza, Sapna Sangeera Road, Indore, M.P",
+      details: "106, Navrang Plaza, Sapna Sangeeta Road, Indore, M.P",
       description: "Global service",
     },
     {
-      icon: MessageCircle,
-      title: "WhatsApp",
-      details: "+91 9301946303",
-      description: "Fast support",
+      icon: Linkedin,
+      title: "LinkedIn",
+      details: "View Profile",
+      description: "Connect professionally",
+      link: "https://www.linkedin.com/company/vortexcubes/",
     },
   ];
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const existingMessages =
+      JSON.parse(localStorage.getItem("contactMessages")) || [];
+
+    const newMessage = {
+      ...formData,
+      id: Date.now(),
+      createdAt: new Date().toISOString(),
+    };
+
+    existingMessages.push(newMessage);
+
+    localStorage.setItem(
+      "contactMessages",
+      JSON.stringify(existingMessages)
+    );
+
+    setSuccess(true);
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+
+    setTimeout(() => setSuccess(false), 3000);
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
-      
-      {/* ✅ SAME NAVBAR AS HOME */}
-      <Navbar />
+<div className="min-h-screen bg-black text-white">
+  <Navbar />
 
-      {/* ✅ Padding so navbar does not overlap */}
-      <div className="pt-24">
+  {/* Contact content starts just below navbar */}
+  <div className="pt-16">
+    <section className="py-16 text-center">
+      <h1 className="text-5xl font-bold">Contact Us</h1>
+      <p className="mt-4 text-gray-400">
+        Reach out to us for support or collaboration
+      </p>
+    </section>
 
-        {/* Background */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-          <div
-            className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "1s" }}
-          />
-        </div>
 
-        {/* Hero */}
-        <section className="relative py-16 px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            Contact Us
-          </h1>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            Reach out to us for support, queries, or collaborations.
-          </p>
-        </section>
+        {/* Grid */}
+        <section className="py-16 px-6">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
 
-        {/* Contact Cards */}
-        <section className="relative py-20 px-6">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            {contactInfo.map((info, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-gray-900/60 to-black/60 border border-gray-800 rounded-2xl p-6 hover:border-gray-600 transition hover:scale-105"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="bg-white p-3 rounded-xl">
-                    <info.icon className="w-6 h-6 text-black" />
+            {/* Contact Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {contactInfo.map((info, index) =>
+                info.link ? (
+                  <a
+                    key={index}
+                    href={info.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-center
+                    bg-gray-900 border border-gray-800 rounded-2xl p-6
+                    transition-all duration-300
+                    hover:-translate-y-2 hover:border-white/40
+                    hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+                  >
+                    <CardContent info={info} />
+                  </a>
+                ) : (
+                  <div
+                    key={index}
+                    className="group flex items-center justify-center
+                    bg-gray-900 border border-gray-800 rounded-2xl p-6
+                    transition-all duration-300
+                    hover:-translate-y-2 hover:border-white/40
+                    hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+                  >
+                    <CardContent info={info} />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold">{info.title}</h3>
-                    <p className="text-white">{info.details}</p>
-                    <p className="text-gray-500 text-sm">
-                      {info.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+                )
+              )}
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8
+              transition-all duration-300
+              hover:shadow-[0_0_30px_rgba(255,255,255,0.12)]"
+            >
+              <h2 className="text-3xl font-bold text-center mb-6">
+                Send Us a Message
+              </h2>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+
+                <input
+                  placeholder="Your Name"
+                  required
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  className="w-full p-3 bg-black border border-gray-700 rounded-lg
+                  transition-all duration-300
+                  focus:outline-none focus:border-white/50
+                  focus:shadow-[0_0_10px_rgba(255,255,255,0.25)]"
+                />
+
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  className="w-full p-3 bg-black border border-gray-700 rounded-lg
+                  transition-all duration-300
+                  focus:outline-none focus:border-white/50
+                  focus:shadow-[0_0_10px_rgba(255,255,255,0.25)]"
+                />
+
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  required
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                  className="w-full p-3 bg-black border border-gray-700 rounded-lg
+                  transition-all duration-300
+                  focus:outline-none focus:border-white/50
+                  focus:shadow-[0_0_10px_rgba(255,255,255,0.25)]"
+                />
+
+                <textarea
+                  placeholder="Message"
+                  rows="4"
+                  required
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  className="w-full p-3 bg-black border border-gray-700 rounded-lg
+                  transition-all duration-300
+                  focus:outline-none focus:border-white/50
+                  focus:shadow-[0_0_10px_rgba(255,255,255,0.25)]"
+                />
+
+                <button
+                  type="submit"
+                  className="w-full bg-white text-black font-semibold py-3 rounded-lg
+                  transition-all duration-300
+                  hover:bg-gray-200 hover:scale-[1.02]
+                  hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                >
+                  Send Message
+                </button>
+
+                {success && (
+                  <p className="text-green-400 text-center mt-3">
+                    ✅ Message sent successfully
+                  </p>
+                )}
+              </form>
+            </div>
+
           </div>
         </section>
-
+        
       </div>
     </div>
   );
-};
+}
 
-export default Page;
+/* ✅ Card Content Component */
+function CardContent({ info }) {
+  return (
+    <div className="flex flex-col gap-3 text-center">
+      <div
+        className="bg-white p-3 rounded-xl mx-auto
+        transition-all duration-300
+        group-hover:scale-110 group-hover:-translate-y-1
+        group-hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]"
+      >
+        <info.icon className="w-6 h-6 text-black" />
+      </div>
 
+      <h3 className="text-xl font-semibold transition group-hover:text-white">
+        {info.title}
+      </h3>
+
+      <p className="text-white underline transition group-hover:text-gray-200">
+        {info.details}
+      </p>
+
+      <p className="text-gray-400 text-sm transition group-hover:text-gray-300">
+        {info.description}
+      </p>
+    </div>
+  );
+}

@@ -1,9 +1,9 @@
 "use client";
-
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const ExpertiseSection = () => {
+// const ExpertiseSection = () => {
+    export default function ExpertiseSection(){
     const [hoveredTag, setHoveredTag] = useState(null);
 
     const tags = [
@@ -18,9 +18,11 @@ const ExpertiseSection = () => {
         'Web Development'
     ];
 
+    
     return (
         <div className="text-white flex items-center justify-center">
-            
+            {/* ANIMATION CSS */}
+      
             <div
                 className="
                 w-full
@@ -105,8 +107,10 @@ const ExpertiseSection = () => {
                 </div>
 
             </div>
+            
         </div>
     );
 };
 
-export default ExpertiseSection;
+
+
