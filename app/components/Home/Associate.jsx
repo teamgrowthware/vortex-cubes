@@ -524,7 +524,7 @@ export default function Associate() {
 
         {/* PARTNERS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-24">
-          {["THiNK", "pinio", "knowella", "TRUCKING"].map((p) => (
+          {["THiNK", "pinio", "knowella", "Branium"].map((p) => (
             <Card3D
               key={p}
               className="bg-white/5 border border-white/10 rounded-3xl p-10 text-center hover:bg-white/10"
