@@ -55,7 +55,9 @@ export default function Home() {
       </video>
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-4xl text-center flex flex-col items-center mt-28 sm:mt-32 md:mt-44 px-2">
+     
+<div className="relative z-20 w-full max-w-4xl text-center flex flex-col items-center pt-20 sm:pt-24 px-2">
+
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-200/10 to-black/90 backdrop-blur-md rounded-full border border-white/50 mb-5 text-xs sm:text-sm">
           <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.95)]"></span>
@@ -128,3 +130,6 @@ export default function Home() {
     </div>
   );
 }
+
+
+

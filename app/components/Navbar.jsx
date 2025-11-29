@@ -111,18 +111,25 @@ export default function Navbar() {
           <Link href="/#home" className="text-gray-400 hover:text-white">
             Home
           </Link>
+          <Link href="/institute" className="text-gray-400 hover:text-white">
+            Institute
+          </Link>
           <Link href="/#about" className="text-gray-400 hover:text-white">
             About Us
           </Link>
           <Link href="/#portfolio" className="text-gray-400 hover:text-white">
             Portfolio
           </Link>
-          <Link href="/#services" className="text-gray-400 hover:text-white">
+
+          {/* <Link href="/#services" className="text-gray-400 hover:text-white">
+            Services
+          </Link> */}
+
+          <Link href="/services" className="text-gray-400 hover:text-white">
             Services
           </Link>
-          <Link href="/institute" className="text-gray-400 hover:text-white">
-            Institute
-          </Link>
+
+          
           <Link href="/contact" className="text-gray-400 hover:text-white">
             Contact
           </Link>
@@ -144,10 +151,11 @@ export default function Navbar() {
         }`}
       >
         <Link onClick={closeMenu} href="/#home" className="text-white hover:text-gray-300 transition">Home</Link>
+         <Link onClick={closeMenu} href="/institute" className="text-white hover:text-gray-300 transition">Institute</Link>
         <Link onClick={closeMenu} href="/#about" className="text-white hover:text-gray-300 transition">About Us</Link>
         <Link onClick={closeMenu} href="/#portfolio" className="text-white hover:text-gray-300 transition">Portfolio</Link>
-        <Link onClick={closeMenu} href="/#services" className="text-white hover:text-gray-300 transition">Services</Link>
-        <Link onClick={closeMenu} href="/institute" className="text-white hover:text-gray-300 transition">Institute</Link>
+        <Link onClick={closeMenu} href="/services" className="text-white hover:text-gray-300 transition">Services</Link>
+       
         <Link onClick={closeMenu} href="/contact" className="text-white hover:text-gray-300 transition">Contact</Link>
       </div>
     </nav>

@@ -99,42 +99,92 @@ export default function ClientReviewsPage() {
 
   return (
     <div className="bg-black min-h-screen">
-      {/* HERO SECTION */}
-      <section className="relative h-[90vh] md:h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 w-full md:w-1/2 h-full">
-          <img 
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&h=800&fit=crop"
-            alt="Designer workspace"
-            className="w-full h-full object-cover"
-            style={{ filter: 'grayscale(100%) brightness(0.4)' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black md:from-transparent to-black"></div>
-        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col md:flex-row items-center">
-          <div className="w-full md:w-1/2"></div>
-          <div className="w-full md:w-1/2 mt-10 md:mt-0 md:pl-16 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/20 bg-white/5">
-              <div className="w-2 h-2 rounded-full bg-white"></div>
-              <span className="text-white text-sm">Reviews</span>
-            </div>
-            
-            <h1 className="text-white text-5xl md:text-7xl font-light mb-6 leading-tight">
-              Client Reviews
-            </h1>
-            
-            <p className="text-gray-400 text-lg md:text-xl mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
-              Real feedback from clients who trusted my design expertise to elevate their brands successfully.
-            </p>
-          </div>
-        </div>
-      </section>
+ {/* Background Image */}
+{/* <section className="relative h-[55vh] md:h-[60vh] flex items-center overflow-hidden">
+
+ 
+  <div className="absolute inset-0 md:w-1/2 h-full">
+    <img
+      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&fit=crop"
+      alt="Client reviews"
+      className="w-full h-full object-cover grayscale"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/60 to-black" />
+  </div>
+
+  
+  <div className="relative z-10 max-w-7xl mx-auto w-full px-6 flex items-center">
+    <div className="hidden md:block w-1/2"></div>
+
+    <div className="w-full md:w-1/2 text-center md:text-left">
+      <span className="inline-flex items-center gap-2 mb-3 px-3 py-1.5 text-xs border border-white/20 bg-white/10 rounded-full">
+        • Reviews
+      </span>
+
+      <h1 className="text-white text-3xl md:text-5xl font-light mb-3">
+        Client Reviews
+      </h1>
+
+      <p className="text-gray-400 text-sm md:text-base max-w-lg leading-relaxed">
+        Real feedback from clients who trusted my design expertise
+        to elevate their brands successfully.
+      </p>
+    </div>
+  </div>
+</section> */}
+
+      
+ <section className="relative h-[52vh] md:h-[58vh] flex items-center bg-black overflow-hidden">
+
+  {/* IMAGE SIDE */}
+  <div className="absolute inset-y-0 left-0 w-full md:w-1/2">
+    <img
+      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&fit=crop"
+      alt="Client Reviews"
+      className="w-full h-full object-cover grayscale"
+    />
+
+    {/* DARK GRADIENT OVER IMAGE */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/70 to-black"></div>
+  </div>
+
+  {/* CONTENT */}
+  <div className="relative z-10 max-w-7xl mx-auto w-full px-6 flex items-center">
+    
+    {/* Empty left space on desktop */}
+    <div className="hidden md:block md:w-1/2"></div>
+
+    {/* TEXT AREA */}
+    <div className="w-full md:w-1/2 text-center md:text-left">
+    <span className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 text-sm rounded-full border border-white/40 bg-black text-white">
+
+
+{/* <span className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 text-sm rounded-full border border-white bg-black"> */}
+        ● Reviews
+      </span>
+
+      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-light mb-4">
+        Client Reviews
+      </h1>
+
+      <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-md leading-relaxed mb-6">
+        Real feedback from clients who trusted my design expertise
+        to elevate their brands successfully.
+      </p>
+
+     
+
+    </div>
+  </div>
+</section>
+     
 
       {/* TESTIMONIALS SECTION */}
       <section className="py-16 md:py-20 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-8 mb-12 text-center">
           <h2 className="text-white text-4xl md:text-6xl font-light mb-4">What Our Clients Say</h2>
-          <p className="text-gray-400 text-lg md:text-xl">Trusted by industry leaders worldwide</p>
+          {/* <p className="text-gray-400 text-lg md:text-xl">Trusted by industry leaders worldwide</p> */}
         </div>
 
         {/* Scrollable Testimonials */}
@@ -188,7 +238,7 @@ export default function ClientReviewsPage() {
         </div>
 
         {/* Stats Section */}
-        <div className="max-w-6xl mx-auto px-6 md:px-8 mt-16">
+        {/* <div className="max-w-6xl mx-auto px-6 md:px-8 mt-16">
           <div className="bg-neutral-900 rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-around gap-10 md:gap-4">
             <div className="text-center">
               <div className="text-white text-4xl md:text-5xl font-light mb-2 md:mb-3">180+</div>
@@ -205,7 +255,7 @@ export default function ClientReviewsPage() {
               <div className="text-gray-300 text-base md:text-lg">Years of experience</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Keyframes Animation */}

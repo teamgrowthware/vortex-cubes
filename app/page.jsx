@@ -31,16 +31,18 @@
 // }
 
 import Home from "./components/Home/Home";
-import ExpertiseSection from "./components/Home/OurExpertise";
+import ExpertiseSection from "./components/Home/ExpertiseSection";
 import AlllProjects from "./components/Home/AlllProjects";
 import RecentWorks from "./components/Home/RecentWorks";
 import Process from "./components/Home/Process";
-import Services from "./components/Home/Services";
+// import Services from "./components/Home/Services";
 
 import Faq from "./components/Home/Faq";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Testimonial from "./components/Home/Testimonial";
+import SoftwareSolution from "./components/Home/SoftwareSolution";
+import Associate from './components/Home/Associate'
 
 // import Contact from "./components/Home/Contact";
 
@@ -74,9 +76,9 @@ export default function Page() {
           <Process />
 
           {/* Services Section */}
-          <div id="services">
+          {/* <div id="services">
             <Services />
-          </div>
+          </div> */}
 
           {/* Institude Section
           <div id="institude">
@@ -87,6 +89,9 @@ export default function Page() {
 
           <Testimonial />
           <Faq />
+          <SoftwareSolution />
+          <Associate/>
+
         </div>
       </div>
       {/* <div id="contact">
