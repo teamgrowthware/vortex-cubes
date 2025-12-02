@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
+import Link from "next/link";
 import Footer from "../components/Footer";
 
 // Lucide Icons (SINGLE IMPORT ✅)
@@ -85,6 +86,7 @@ export default function Institute() {
   /* ===== COURSES DATA ===== */
   const courses = [
     {
+      slug: "mern-stack",
       title: "Full Stack Development (MERN)",
       desc:
         "Master the MERN stack to build powerful, scalable, and modern full-stack web applications from front end to back end.",
@@ -109,6 +111,7 @@ export default function Institute() {
     },
 
     {
+       slug: "mean-stack",
       title: "Full Stack Development (MEAN)",
       desc:
         "Master the MEAN stack and learn to build fast, scalable, and dynamic full-stack applications.",
@@ -135,6 +138,7 @@ export default function Institute() {
     
 
     {
+      slug: "react-native",
     title: "Mobile App Development (React Native)",
     desc: "Build high-performance Android & iOS apps using React Native.",
     duration: "12 month learning + 6 month practice",
@@ -153,6 +157,7 @@ export default function Institute() {
   },
 
   {
+slug: "digital-marketing",
   title: "Digital Marketing",
   desc: "Master SEO, social media, paid ads, and conversion-driven marketing strategies.",
   duration: "12 month learning + 6 month practice",
@@ -177,6 +182,7 @@ export default function Institute() {
 
 
   {
+     slug: "flutter",
   title: "Mobile App Development (Flutter)",
   desc: "Create beautiful, fast cross-platform mobile apps using Flutter & Dart.",
   duration: "12 month learning + 6 month practice",
@@ -196,7 +202,9 @@ export default function Institute() {
     { label: "App Publishing (Play Store)", icon: <Upload /> },
   ],
 },
+
 {
+   slug: "ui-ux-design",
   title: "UI / UX Design",
   desc: "Create stunning interfaces and meaningful, user-centered digital experiences.",
   duration: "12 month learning + 6 month practice",
@@ -262,7 +270,7 @@ export default function Institute() {
 
 
       {/* COURSES */}
-      <section id="courses" className="px-6 py-16">
+      <section id="courses" className="px-6 pt-2 pb-14">
        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-center">
           Our <span className="text-white">Courses</span>
         </h2>
@@ -377,12 +385,43 @@ export default function Institute() {
     ))}
   </div>
 
-  <button
+  {/* <button
     onClick={() => handleApplyClick(course)}
     className="mt-auto bg-white text-black py-2 px-4 text-sm font-semibold rounded-full hover:scale-105 transition-transform duration-300"
   >
     Apply Now
+  </button> */}
+   {/* <Link
+  href={`/course/${course.title.toLowerCase().replace(/\s+/g, "-")}`}
+  className="bg-transparent border border-white py-2 px-4 rounded-full text-sm hover:bg-white hover:text-black transition"
+>
+  Learn More
+</Link> */}
+
+
+<div className="mt-auto flex justify-between items-center gap-2">
+  <button
+    onClick={() => handleApplyClick(course)}
+
+    className="mt-auto
+    bg-white text-black
+    border
+    hover:bg-black hover:text-white
+   py-2 px-4 text-sm font-semibold rounded-full">
+  
+    Apply Now
   </button>
+
+  <Link href={`/institute/${course.slug}`}>
+  <button className="mt-auto bg-black text-white hover:bg-white hover:text-black py-2 px-4 text-sm font-semibold rounded-full">
+    Learn More...
+  </button>
+</Link>
+
+</div>
+
+
+
 </div>
 
   ))}
