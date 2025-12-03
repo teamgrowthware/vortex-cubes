@@ -1,4 +1,4 @@
 export default {
-  siteUrl: "https://vortex-cubes.vercel.app",
+  siteUrl: "https://vortexcubes.com",
   generateRobotsTxt: true,
 };

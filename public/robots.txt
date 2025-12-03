@@ -1,4 +1,13 @@
+# *
 User-agent: *
 Allow: /
 
+<<<<<<< HEAD
 Sitemap: https://vortex-cubes.vercel.app/sitemap.xml
+=======
+# Host
+Host: https://vortexcubes.com
+
+# Sitemaps
+Sitemap: https://vortexcubes.com/sitemap.xml
+>>>>>>> 22e651cf0bd0b94701b5f59f93193efef01db1b6
