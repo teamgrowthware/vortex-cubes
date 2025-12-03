@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://vortexcubes.com
+
+# Sitemaps
 Sitemap: https://vortexcubes.com/sitemap.xml
