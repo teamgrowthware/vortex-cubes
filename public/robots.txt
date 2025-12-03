@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vortex-cubes.vercel.app/sitemap.xml
+Sitemap: https://vortexcubes.com/sitemap.xml
