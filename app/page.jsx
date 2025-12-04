@@ -62,9 +62,9 @@ export default function Page() {
         </div> */}
 
         {/* Portfolio Section */}
-        <div id="portfolio">
+        {/* <div id="portfolio">
           <AlllProjects />
-        </div>
+        </div> */}
 
         <div id="about">
           <ExpertiseSection />
