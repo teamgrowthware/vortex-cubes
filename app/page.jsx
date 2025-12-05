@@ -1,35 +1,3 @@
-// import Home from './components/Home/Home';
-// import ExpertiseSection from './components/Home/OurExpertise';
-// import AlllProjects from './components/Home/AlllProjects';
-// import RecentWorks from './components/Home/RecentWorks';
-// import Process from './components/Home/Process';
-// import Services from './components/Home/Services';
-// import Faq from './components/Home/Faq';
-// import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
-// import Testimonial from './components/Home/Testimonial';
-
-// export default function Page() {
-//   return (
-//     <>
-//       <div className='bg-black'>
-//         <Navbar/>
-//         <Home/>
-//         <AlllProjects/>
-//         <div className='p-8'>
-//           <ExpertiseSection/>
-//           <RecentWorks/>
-//           <Process/>
-//           <Services/>
-//           <Testimonial/>
-//           <Faq/>
-//         </div>
-//         <Footer/>
-//       </div>
-//     </>
-//   );
-// }
-
 import Home from "./components/Home/Home";
 import ExpertiseSection from "./components/Home/ExpertiseSection";
 import AlllProjects from "./components/Home/AlllProjects";
@@ -75,16 +43,7 @@ export default function Page() {
           <RecentWorks />
           <Process />
 
-          {/* Services Section */}
-          {/* <div id="services">
-            <Services />
-          </div> */}
-
-          {/* Institude Section
-          <div id="institude">
-            <Institude />
-            </div> */}
-
+       
             
 
           <Testimonial />
