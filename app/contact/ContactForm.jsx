@@ -12,8 +12,6 @@ import {
 } from "@/components/ui/select";
 import { Send, Loader2, CheckCircle } from "lucide-react";
 
-
-
 export default function ContactForm({
   onSubmit,
   subjects = [
@@ -101,8 +99,8 @@ export default function ContactForm({
   };
 
   return (
-    <div className="bg-card border border-card-border rounded-lg p-4 lg:p-6">
-      <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-6">
+    <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-lg p-4 lg:p-6">
+      <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
         Send us a Message
       </h2>
 
@@ -121,7 +119,7 @@ export default function ContactForm({
           <div className="space-y-2">
             <label
               htmlFor="fullName"
-              className="text-sm font-medium text-foreground"
+              className="text-sm font-medium text-gray-300"
             >
               Full Name <span className="text-emerald-500">*</span>
             </label>
@@ -131,9 +129,8 @@ export default function ContactForm({
               placeholder="Enter your full name"
               value={formData.fullName}
               onChange={(e) => handleChange("fullName", e.target.value)}
-              className={`h-12 bg-background transition-all duration-300 focus:border-emerald-500 ${
-                errors.fullName ? "border-red-500" : ""
-              }`}
+              className={`h-12 bg-white/5 border-white/10 text-white placeholder:text-gray-500 transition-all duration-300 focus:border-emerald-500 focus:bg-white/10 ${errors.fullName ? "border-red-500" : ""
+                }`}
               data-testid="input-fullname"
             />
             {errors.fullName && (
@@ -144,7 +141,7 @@ export default function ContactForm({
           <div className="space-y-2">
             <label
               htmlFor="email"
-              className="text-sm font-medium text-foreground"
+              className="text-sm font-medium text-gray-300"
             >
               Email Address <span className="text-emerald-500">*</span>
             </label>
@@ -154,9 +151,8 @@ export default function ContactForm({
               placeholder="Enter your email"
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
-              className={`h-12 bg-background transition-all duration-300 focus:border-emerald-500 ${
-                errors.email ? "border-red-500" : ""
-              }`}
+              className={`h-12 bg-white/5 border-white/10 text-white placeholder:text-gray-500 transition-all duration-300 focus:border-emerald-500 focus:bg-white/10 ${errors.email ? "border-red-500" : ""
+                }`}
               data-testid="input-email"
             />
             {errors.email && (
@@ -169,7 +165,7 @@ export default function ContactForm({
           <div className="space-y-2">
             <label
               htmlFor="phone"
-              className="text-sm font-medium text-foreground"
+              className="text-sm font-medium text-gray-300"
             >
               Phone Number
             </label>
@@ -179,7 +175,7 @@ export default function ContactForm({
               placeholder="Enter your phone number"
               value={formData.phone}
               onChange={(e) => handleChange("phone", e.target.value)}
-              className="h-12 bg-background transition-all duration-300 focus:border-emerald-500"
+              className="h-12 bg-white/5 border-white/10 text-white placeholder:text-gray-500 transition-all duration-300 focus:border-emerald-500 focus:bg-white/10"
               data-testid="input-phone"
             />
           </div>
@@ -187,7 +183,7 @@ export default function ContactForm({
           <div className="space-y-2">
             <label
               htmlFor="subject"
-              className="text-sm font-medium text-foreground"
+              className="text-sm font-medium text-gray-300"
             >
               Subject <span className="text-emerald-500">*</span>
             </label>
@@ -197,16 +193,15 @@ export default function ContactForm({
             >
               <SelectTrigger
                 id="subject"
-                className={`h-12 bg-background transition-all duration-300 focus:border-emerald-500 ${
-                  errors.subject ? "border-red-500" : ""
-                }`}
+                className={`h-12 bg-white/5 border-white/10 text-white placeholder:text-gray-500 transition-all duration-300 focus:border-emerald-500 focus:bg-white/10 ${errors.subject ? "border-red-500" : ""
+                  }`}
                 data-testid="select-subject"
               >
                 <SelectValue placeholder="Select a subject" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-gray-900 border-gray-800 text-white">
                 {subjects.map((subject) => (
-                  <SelectItem key={subject} value={subject}>
+                  <SelectItem key={subject} value={subject} className="focus:bg-gray-800 focus:text-white">
                     {subject}
                   </SelectItem>
                 ))}
@@ -221,7 +216,7 @@ export default function ContactForm({
         <div className="space-y-2">
           <label
             htmlFor="message"
-            className="text-sm font-medium text-foreground"
+            className="text-sm font-medium text-gray-300"
           >
             Message <span className="text-emerald-500">*</span>
           </label>
@@ -231,9 +226,8 @@ export default function ContactForm({
             value={formData.message}
             onChange={(e) => handleChange("message", e.target.value)}
             rows={5}
-            className={`bg-background transition-all duration-300 focus:border-emerald-500 resize-none ${
-              errors.message ? "border-red-500" : ""
-            }`}
+            className={`bg-white/5 border-white/10 text-white placeholder:text-gray-500 transition-all duration-300 focus:border-emerald-500 focus:bg-white/10 resize-none ${errors.message ? "border-red-500" : ""
+              }`}
             data-testid="textarea-message"
           />
           {errors.message && (
@@ -245,17 +239,20 @@ export default function ContactForm({
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full h-12 bg-emerald-500 text-white font-semibold transition-all duration-300 hover:bg-emerald-600 border-emerald-600 disabled:opacity-70"
+            className={`w-full h-12 text-white font-semibold rounded-xl border border-white/50 bg-black/20 backdrop-blur-md transition-all duration-300 disabled:opacity-70 ${isSubmitting
+                ? 'shadow-[0_0_80px_rgba(255,255,255,0.8)] border-white'
+                : 'shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)]'
+              }`}
             data-testid="button-submit"
           >
             {isSubmitting ? (
               <>
-                <Loader2 className="w-5 h-5 animate-spin" />
+                <Loader2 className="w-5 h-5 animate-spin mr-2" />
                 Sending...
               </>
             ) : (
               <>
-                <Send className="w-5 h-5" />
+                <Send className="w-5 h-5 mr-2" />
                 Send Message
               </>
             )}

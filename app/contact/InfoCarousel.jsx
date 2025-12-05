@@ -45,6 +45,17 @@ export default function InfoCarousel({
     });
   }, [api]);
 
+  // Auto-scroll effect
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 7000); // 7 seconds
+
+    return () => clearInterval(interval);
+  }, [api]);
+
   const scrollTo = useCallback(
     (index) => {
       api?.scrollTo(index);
@@ -64,18 +75,18 @@ export default function InfoCarousel({
       <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
         <CarouselContent>
           <CarouselItem>
-            <div className="bg-card border border-card-border rounded-lg p-4 h-[180px] flex flex-col items-center justify-center text-center">
+            <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-lg p-4 h-[180px] flex flex-col items-center justify-center text-center">
               <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-3">
                 <Clock className="w-5 h-5 text-emerald-500" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-lg font-semibold text-white mb-2">
                 Business Hours
               </h3>
               <p className="text-emerald-500 font-medium text-base mb-1">
                 {businessHours.days}: {businessHours.hours}
               </p>
               {businessHours.note && (
-                <p className="text-muted-foreground text-xs">
+                <p className="text-gray-400 text-xs">
                   {businessHours.note}
                 </p>
               )}
@@ -83,11 +94,11 @@ export default function InfoCarousel({
           </CarouselItem>
 
           <CarouselItem>
-            <div className="bg-card border border-card-border rounded-lg p-4 h-[180px] flex flex-col items-center justify-center text-center">
+            <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-lg p-4 h-[180px] flex flex-col items-center justify-center text-center">
               <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-3">
                 <Users className="w-5 h-5 text-emerald-500" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-3">
+              <h3 className="text-lg font-semibold text-white mb-3">
                 Connect With Us
               </h3>
               <div className="flex gap-3 mb-4">
@@ -97,7 +108,7 @@ export default function InfoCarousel({
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground transition-all duration-300 hover:bg-emerald-500/20 hover:text-emerald-500 hover:scale-110"
+                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 transition-all duration-300 hover:bg-emerald-500/20 hover:text-emerald-500 hover:scale-110"
                     aria-label={item.label}
                     data-testid={`social-link-${item.label.toLowerCase()}`}
                   >
@@ -105,7 +116,7 @@ export default function InfoCarousel({
                   </a>
                 ))}
               </div>
-              <div className="text-muted-foreground text-xs">
+              <div className="text-gray-400 text-xs">
                 <p>{address.street}</p>
                 <p>{address.city}</p>
                 <p>{address.country}</p>
@@ -115,11 +126,11 @@ export default function InfoCarousel({
         </CarouselContent>
 
         <CarouselPrevious
-          className="left-2 bg-card/80 backdrop-blur-sm border-border text-foreground transition-transform duration-300 hover:scale-110"
+          className="left-2 bg-black/50 backdrop-blur-sm border-white/10 text-white transition-transform duration-300 hover:scale-110 hover:bg-black/70"
           data-testid="carousel-prev"
         />
         <CarouselNext
-          className="right-2 bg-card/80 backdrop-blur-sm border-border text-foreground transition-transform duration-300 hover:scale-110"
+          className="right-2 bg-black/50 backdrop-blur-sm border-white/10 text-white transition-transform duration-300 hover:scale-110 hover:bg-black/70"
           data-testid="carousel-next"
         />
       </Carousel>
@@ -129,11 +140,10 @@ export default function InfoCarousel({
           <button
             key={index}
             onClick={() => scrollTo(index)}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-              index === current
-                ? "bg-emerald-500 w-6"
-                : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-            }`}
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === current
+              ? "bg-emerald-500 w-6"
+              : "bg-gray-600 hover:bg-gray-500"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
             data-testid={`carousel-dot-${index}`}
           />

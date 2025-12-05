@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 // Custom CSS for neon glow animation
 const neonGlowKeyframes = `
@@ -27,6 +28,21 @@ const PortfolioPage = () => {
   const [isVisible] = useState(true);
   const router = useRouter();
 
+  const deliveries = [
+    { name: "E-Shop", image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=80" },
+    { name: "Times Now India", image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&q=80" },
+    { name: "Fintech", image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&q=80" },
+    { name: "Kai History", image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?w=400&q=80" },
+    { name: "Surplus Loyalty", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" },
+    { name: "Livifi Naturals", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" },
+    { name: "Annuiti", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" },
+    { name: "MD & CO", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" },
+    { name: "Paperlite", image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&q=80" }
+  ];
+
+  const itemsPerView = 5;
+  const maxSlide = Math.max(0, deliveries.length - itemsPerView);
+
   // Auto-slide effect
   useEffect(() => {
     const timer = setInterval(() => {
@@ -39,7 +55,7 @@ const PortfolioPage = () => {
     }, 3000); // 3 seconds
 
     return () => clearInterval(timer);
-  }, [currentSlide]);
+  }, [currentSlide, maxSlide]);
 
   const portfolioItems = [
     {
@@ -92,21 +108,6 @@ const PortfolioPage = () => {
     }
   ];
 
-  const deliveries = [
-    { name: "E-Shop", image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=80" },
-    { name: "Times Now India", image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&q=80" },
-    { name: "Fintech", image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&q=80" },
-    { name: "Kai History", image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?w=400&q=80" },
-    { name: "Surplus Loyalty", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" },
-    { name: "Livifi Naturals", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" },
-    { name: "Annuiti", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" },
-    { name: "MD & CO", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" },
-    { name: "Paperlite", image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&q=80" }
-  ];
-
-  const itemsPerView = 5;
-  const maxSlide = Math.max(0, deliveries.length - itemsPerView);
-
   const nextSlide = () => {
     setCurrentSlide(prev => Math.min(prev + 1, maxSlide));
   };
@@ -116,7 +117,10 @@ const PortfolioPage = () => {
   };
 
   const handleViewProjects = (category) => {
-    const slug = category.toLowerCase().replace(/\s+/g, '-');
+    console.log('handleViewProjects called with category:', category);
+    const slug = category.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
+    console.log('Generated slug:', slug);
+    console.log('Navigating to:', `/project-overview/${slug}`);
     router.push(`/project-overview/${slug}`);
   };
 
@@ -156,18 +160,17 @@ const PortfolioPage = () => {
               {portfolioItems.map((item, index) => (
                 <div
                   key={index}
-                  className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient} transition-all duration-700 transform hover:scale-105 hover:shadow-2xl hover:shadow-white/50 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                  }`}
+                  className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient} transition-all duration-700 transform hover:scale-105 hover:shadow-2xl hover:shadow-white/50 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   {/* Image Background */}
-                  <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"/>
+                  <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                   </div>
 
                   {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none"></div>
 
                   {/* Content */}
                   <div className="relative p-6 h-full flex flex-col justify-between min-h-[320px]">
@@ -196,16 +199,17 @@ const PortfolioPage = () => {
                     </div>
 
                     {/* View Projects Button */}
-                    <button
-                      onClick={() => handleViewProjects(item.category)}
-                      className="mt-4 w-full px-4 py-2 bg-transparent border border-white/30 text-white rounded-lg hover:bg-white hover:text-black transition-all duration-300 group-hover:border-white group-hover:shadow-lg group-hover:shadow-white/50"
+                    <Link
+                      href={`/project-overview/${item.category.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`}
+                      className="mt-4 w-full px-4 py-2 bg-transparent border border-white/30 text-white rounded-lg hover:bg-white hover:text-black transition-all duration-300 group-hover:border-white group-hover:shadow-lg group-hover:shadow-white/50 inline-block text-center"
                     >
                       View Projects
-                    </button>
+                    </Link>
                   </div>
 
                   {/* Hover Border Effect */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/50 rounded-2xl transition-all duration-500"></div>
+                  {/* Hover Border Effect */}
+                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/50 rounded-2xl transition-all duration-500 pointer-events-none"></div>
                 </div>
               ))}
             </div>
@@ -282,9 +286,8 @@ const PortfolioPage = () => {
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        currentSlide === index ? 'w-8 bg-white' : 'w-2 bg-gray-600'
-                      }`}
+                      className={`h-2 rounded-full transition-all duration-300 ${currentSlide === index ? 'w-8 bg-white' : 'w-2 bg-gray-600'
+                        }`}
                     />
                   ))}
                 </div>

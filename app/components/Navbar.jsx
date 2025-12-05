@@ -111,8 +111,8 @@ export default function Navbar() {
           <Link href="/#home" className="text-gray-400 hover:text-white">
             Home
           </Link>
-          <Link href="/institute" className="text-gray-400 hover:text-white">
-            Institute
+          <Link href="/services" className="text-gray-400 hover:text-white">
+               Services
           </Link>
           <Link href="/#about" className="text-gray-400 hover:text-white">
             About Us
@@ -125,8 +125,8 @@ export default function Navbar() {
             Services
           </Link> */}
 
-          <Link href="/services" className="text-gray-400 hover:text-white">
-            Services
+          <Link href="/institute" className="text-gray-400 hover:text-white">
+          Institute
           </Link>
 
           
