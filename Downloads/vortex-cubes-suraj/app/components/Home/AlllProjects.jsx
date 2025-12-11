@@ -29,15 +29,15 @@ const PortfolioPage = () => {
   const router = useRouter();
 
   const deliveries = [
-    { name: "E-Shop", image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=80" },
+    { name: "E-commerce", image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=80" },
     { name: "Times Now India", image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&q=80" },
-    { name: "Fintech", image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&q=80" },
+    { name: "Fasco", image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&q=80" },
     { name: "Kai History", image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?w=400&q=80" },
     { name: "Surplus Loyalty", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" },
-    { name: "Livifi Naturals", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" },
-    { name: "Annuiti", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" },
-    { name: "MD & CO", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" },
-    { name: "Paperlite", image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&q=80" }
+    { name: "Worzo", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" },
+    { name: "Velocity", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" },
+    { name: "Water 4 all", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" },
+    { name: "Occasion super", image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&q=80" }
   ];
 
   const itemsPerView = 5;

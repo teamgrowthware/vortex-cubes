@@ -531,22 +531,6 @@ export default function SoftwareSolutions() {
   }, []);
 
 
-// useEffect(() => {
-//   let animationId;
-//   const speed = 4; // 🔥 increased speed
-
-//   const animate = () => {
-//     setScrollPosition((prev) => {
-//       const maxScroll = teamMembers.length * 180;
-//       return prev >= maxScroll ? 0 : prev + speed;
-//     });
-//     animationId = requestAnimationFrame(animate);
-//   };
-
-//   animationId = requestAnimationFrame(animate);
-
-//   return () => cancelAnimationFrame(animationId);
-// }, [teamMembers.length]);
 
 useEffect(() => {
   let animationId;
@@ -577,12 +561,13 @@ useEffect(() => {
   const solutions = [
     {
       icon: <Truck className="w-8 h-8" />,
-      title: "Transport & Logistic Management Software",
+      title: "Health & Managment",
       description: "Streamlining operations and optimizing efficiency in logistics management.",
     },
+
     {
       icon: <Package className="w-8 h-8" />,
-      title: "Inventory POS Solution",
+      title: " Business & Shopping ",
       description: "Efficient inventory tracking and seamless point-of-sale management system.",
     },
     {
@@ -701,6 +686,7 @@ const industries = [
             ))}
           </div>
         </div>
+
 
         {/* Celebration Section */}
         <div className="w-full overflow-hidden bg-black/50 backdrop-blur-sm py-12 sm:py-16 lg:py-20">

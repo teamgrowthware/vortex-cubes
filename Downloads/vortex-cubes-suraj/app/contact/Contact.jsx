@@ -43,15 +43,15 @@ export default function ContactPage() {
                   note: "Emergency support available 24/7",
                 }}
                 address={{
-                  street: "123 Business Avenue",
-                  city: "New York, NY 10001",
-                  country: "United States",
+                  street: "106 Navarang plaza",
+                  city: "Indore, NY 452010",
+                  country: "India",
                 }}
                 socialLinks={{
-                  facebook: "https://facebook.com",
-                  twitter: "https://twitter.com",
-                  linkedin: "https://linkedin.com",
-                  instagram: "https://instagram.com",
+                  // facebook: "https://facebook.com",
+                  // twitter: "https://twitter.com",
+                  linkedin: "https://www.linkedin.com/company/vortexcubes/",
+                  instagram: "https://www.instagram.com/_vortexcube_?igsh=MTRobjFvYTA4eTRhcQ==",
                 }}
               />
 

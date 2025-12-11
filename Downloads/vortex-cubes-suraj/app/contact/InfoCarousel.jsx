@@ -18,16 +18,16 @@ export default function InfoCarousel({
     note: "Emergency support available 24/7",
   },
   address = {
-    street: "123 Business Avenue",
-    city: "New York, NY 10001",
-    country: "United States",
+    street: "106 Navarang plaza",
+    city: "Indore, NY 452010",
+    country: "India",
   },
   mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304903!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1701234567890!5m2!1sen!2s",
   socialLinks = {
-    facebook: "https://facebook.com",
-    twitter: "https://twitter.com",
-    linkedin: "https://linkedin.com",
-    instagram: "https://instagram.com",
+    // facebook: "https://facebook.com",
+    // twitter: "https://twitter.com",
+    linkedin: "https://www.linkedin.com/company/vortexcubes/",
+    instagram: "https://www.instagram.com/_vortexcube_?igsh=MTRobjFvYTA4eTRhcQ==",
   },
 }) {
   const [api, setApi] = useState();
@@ -64,8 +64,8 @@ export default function InfoCarousel({
   );
 
   const socialItems = [
-    { icon: SiFacebook, href: socialLinks.facebook, label: "Facebook" },
-    { icon: SiX, href: socialLinks.twitter, label: "Twitter" },
+    // { icon: SiFacebook, href: socialLinks.facebook, label: "Facebook" },
+    // { icon: SiX, href: socialLinks.twitter, label: "Twitter" },
     { icon: SiLinkedin, href: socialLinks.linkedin, label: "LinkedIn" },
     { icon: SiInstagram, href: socialLinks.instagram, label: "Instagram" },
   ];
