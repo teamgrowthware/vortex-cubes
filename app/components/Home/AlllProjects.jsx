@@ -17,13 +17,21 @@ const neonGlowKeyframes = `
   .neon-glow {
     animation: neonGlow 2s ease-in-out infinite;
   }
-`;
-
-const style = document.createElement('style');
-style.textContent = neonGlowKeyframes;
-document.head.appendChild(style);
-
+  `;
+  
 const PortfolioPage = () => {
+ useEffect(() => {
+ const style = document.createElement('style');
+ style.textContent = neonGlowKeyframes;
+ document.head.appendChild(style);
+
+return () => {
+  document.head.removeChild(style);
+
+};
+}, [])
+
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible] = useState(true);
   const router = useRouter();
