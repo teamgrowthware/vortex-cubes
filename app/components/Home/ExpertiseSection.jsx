@@ -300,7 +300,7 @@ export default function ExpertiseSection() {
       name: "Dinesh Birla",
       role: "Founder & Director",
      
-      image: "/images/dineshsir.jpg",
+      image: "/images/dineshsir.png",
       portfolio: null,
     },
     {
