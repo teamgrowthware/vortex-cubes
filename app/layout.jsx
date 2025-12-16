@@ -44,8 +44,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Vortexcubes",
-  description: "",
+  title: "VortexCubes | IT & Software Development Company",
+  description: "VortexCubes is an IT & software development company offering cloud DevOps, UI/UX design, digital marketing, and AI integration services.",
 };
 
 export default function RootLayout({ children }) {
