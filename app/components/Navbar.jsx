@@ -74,21 +74,13 @@ export default function Navbar() {
           Home
         </Link>
 
-        <Link onClick={closeMenu} href="/institute" className="text-white hover:text-gray-300 transition">
-          Institute
+         <Link onClick={closeMenu} href="/services" className="text-white hover:text-gray-300 transition">
+          Services
         </Link>
-
-        <Link onClick={closeMenu} href="/#about" className="text-white hover:text-gray-300 transition">
-          About Us
-        </Link>
-
+  
         {/* ✅ FIXED Portfolio Mobile Link */}
         <Link onClick={closeMenu} href="/AllProjects" className="text-white hover:text-gray-300 transition">
           Portfolio
-        </Link>
-
-        <Link onClick={closeMenu} href="/services" className="text-white hover:text-gray-300 transition">
-          Services
         </Link>
 
         <Link onClick={closeMenu} href="/contact" className="text-white hover:text-gray-300 transition">
