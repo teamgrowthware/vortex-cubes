@@ -33,7 +33,7 @@
 import "./globals.css";
 import Script from "next/script";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import WhatsAppButton from "./components/WhatsAppButton";
+
 
 // Google Font
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
         </noscript>
 
         {children}
-        <WhatsAppButton />
+       
       </body>
     </html>
   );

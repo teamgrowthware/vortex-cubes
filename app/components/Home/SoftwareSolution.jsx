@@ -618,48 +618,12 @@ const industries = [
             <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-white/10 border border-white/30 rounded-full text-white text-xs sm:text-sm mb-3 sm:mb-4 backdrop-blur-sm">
               Effortless Tech
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 px-4">
-              <span className="text-white">Software </span>
-              <span className="text-white">Solution</span>
-            </h1>
-            <p className="text-gray-300 max-w-3xl mx-auto text-sm sm:text-base px-4">
-              Empowering businesses with innovative, scalable, and user-friendly software solutions, crafted to streamline
-              operations, enhance productivity, and drive digital transformation.
-            </p>
+           
           </div>
 
-          {/* Solutions Cards */}
-          <div className="space-y-3 sm:space-y-4 mb-12 sm:mb-16 lg:mb-24">
-            {solutions.map((solution, index) => (
-              <div
-                key={index}
-                className="group relative bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-white transition-all duration-300 hover:shadow-lg hover:shadow-white/10"
-              >
-                <div className="flex items-start sm:items-center gap-4 sm:gap-6 w-full sm:w-auto">
-                  <div className="bg-white/10 backdrop-blur-sm p-3 sm:p-4 rounded-lg text-white group-hover:bg-white/20 transition-colors flex-shrink-0">
-                    {React.cloneElement(solution.icon, { className: 'w-6 h-6 sm:w-8 sm:h-8' })}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-base sm:text-xl font-semibold mb-1 sm:mb-2 text-white">
-                      {solution.title}
-                    </h3>
-                    <p className="text-gray-300 text-xs sm:text-sm">
-                      {solution.description}
-                    </p>
-                  </div>
-                </div>
-                {/* <button className="px-4 sm:px-6 py-1.5 sm:py-2 bg-white text-black hover:bg-gray-200 rounded-lg transition-colors font-medium text-sm sm:text-base w-full sm:w-auto flex-shrink-0">
-                  View
-                </button> */}
-              </div>
-            ))}
-          </div>
 
           {/* Industries Section */}
           <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-            <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-white/10 backdrop-blur-sm border border-white/30 rounded-full text-white text-xs sm:text-sm mb-3 sm:mb-4">
-              Universal Solutions
-            </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 px-4">
               For <span className="text-white">Every Industry</span> We have Solution
             </h2>
@@ -689,74 +653,7 @@ const industries = [
 
 
         {/* Celebration Section */}
-        <div className="w-full overflow-hidden bg-black/50 backdrop-blur-sm py-12 sm:py-16 lg:py-20">
-          <div className="text-center mb-8 sm:mb-12 px-4">
-            <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-white/10 backdrop-blur-sm border border-white/30 rounded-full text-white text-xs sm:text-sm mb-3 sm:mb-4">
-              Better Stories
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
-              Celebrating Our Growth and Success!
-            </h2>
-            <p className="text-gray-300 max-w-4xl mx-auto text-xs sm:text-sm lg:text-base px-4">
-              Proudly celebrating a decade of innovation, dedication, and success - thanks to our exceptional team, clients, and partners who have fueled our journey from startup to industry leader.
-            </p>
-          </div>
-
-          {/* Sliding Team Members with 3D Avatars */}
-          <div className="relative">
-            <div
-  className="flex gap-4 sm:gap-6 will-change-transform"
-  style={{ transform: `translateX(-${scrollPosition}px)` }}
->
-
-
-              {duplicatedMembers.map((member, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-32 sm:w-40 lg:w-44 group cursor-pointer"
-                >
-                  <div className="relative overflow-hidden rounded-lg aspect-[3/4] mb-3 perspective-1000">
-                    <div 
-                      className="w-full h-full flex items-center justify-center text-white text-2xl sm:text-3xl lg:text-4xl font-bold group-hover:scale-110 transition-all duration-500 relative"
-                      style={{
-                        background: getAvatarGradient(member.name),
-                        boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), inset 0 0 40px rgba(255, 255, 255, 0.1)',
-                        transform: 'translateZ(0)',
-                      }}
-                    >
-                      {/* 3D Effect Layers */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-50"></div>
-                      <div className="absolute inset-0 bg-gradient-to-tl from-black/20 to-transparent opacity-30"></div>
-                      
-                      {/* Shine Effect */}
-                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-x-full group-hover:translate-x-full" style={{ transition: 'transform 0.8s ease-in-out' }}></div>
-                      
-                      {/* Initials */}
-                      <span className="relative z-10 drop-shadow-2xl" style={{ 
-                        textShadow: '0 2px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.2)',
-                        transform: 'translateZ(20px)'
-                      }}>
-                        {getInitials(member.name)}
-                      </span>
-                      
-                      {/* Bottom Glow */}
-                      <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent"></div>
-                    </div>
-                    
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <h3 className="text-white font-semibold text-xs sm:text-sm mb-1 text-center uppercase">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-400 text-xs text-center uppercase tracking-wide">
-                    {member.role}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+       
       </div>
 
       <style jsx>{`

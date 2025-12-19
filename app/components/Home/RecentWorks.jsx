@@ -90,7 +90,7 @@ export default function RecentWorks() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
                   {/* Button */}
-                  <button className="
+                  {/* <button className="
                       absolute bottom-4 left-1/2 -translate-x-1/2 w-[75%] sm:w-[70%]
                       bg-white/20 backdrop-blur-md border border-white/40
                       text-white py-2.5 sm:py-3 rounded-full 
@@ -104,7 +104,7 @@ export default function RecentWorks() {
                       className={`transition-all duration-300 
                         ${hovered === index ? "scale-125 -translate-y-1 rotate-12" : ""}`}
                     />
-                  </button>
+                  </button> */}
 
                 </div>
               </SwiperSlide>
